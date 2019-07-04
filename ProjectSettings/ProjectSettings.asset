@@ -552,11 +552,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Dugy
+  metroCertificateIssuer: Dugy
+  metroCertificateNotAfter: 007c9c491a51d601
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: 

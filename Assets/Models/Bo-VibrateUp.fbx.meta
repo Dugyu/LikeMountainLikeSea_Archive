@@ -1,21 +1,98 @@
 fileFormatVersion: 2
-guid: 743c855882964d545b0a706f93ab0537
+guid: 2652c1d680626ac4192d66e94b42c1b6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Bo_1
+    100004: Bo_SDS
+    100006: Bone
+    100008: Left_10
+    100010: Left_11
+    100012: Left_12
+    100014: Left_3
+    100016: Left_4
+    100018: Left_5
+    100020: Left_6
+    100022: Left_7
+    100024: Left_8
+    100026: Left_9
+    100028: Right_10
+    100030: Right_11
+    100032: Right_12
+    100034: Right_3
+    100036: Right_4
+    100038: Right_5
+    100040: Right_6
+    100042: Right_7
+    100044: Right_8
+    100046: Right_9
+    100048: Spine_1
+    100050: Spine_10
+    100052: Spine_11
+    100054: Spine_12
+    100056: Spine_13
+    100058: Spine_14
+    100060: Spine_15
+    100062: Spine_2
+    100064: Spine_3
+    100066: Spine_4
+    100068: Spine_5
+    100070: Spine_6
+    100072: Spine_7
+    100074: Spine_8
+    100076: Spine_9
     400000: //RootNode
-    2100000: Mat
-    4300000: louts_start
-    7400000: Lotus_Open
+    400002: Bo_1
+    400004: Bo_SDS
+    400006: Bone
+    400008: Left_10
+    400010: Left_11
+    400012: Left_12
+    400014: Left_3
+    400016: Left_4
+    400018: Left_5
+    400020: Left_6
+    400022: Left_7
+    400024: Left_8
+    400026: Left_9
+    400028: Right_10
+    400030: Right_11
+    400032: Right_12
+    400034: Right_3
+    400036: Right_4
+    400038: Right_5
+    400040: Right_6
+    400042: Right_7
+    400044: Right_8
+    400046: Right_9
+    400048: Spine_1
+    400050: Spine_10
+    400052: Spine_11
+    400054: Spine_12
+    400056: Spine_13
+    400058: Spine_14
+    400060: Spine_15
+    400062: Spine_2
+    400064: Spine_3
+    400066: Spine_4
+    400068: Spine_5
+    400070: Spine_6
+    400072: Spine_7
+    400074: Spine_8
+    400076: Spine_9
+    2100000: Body
+    4300000: Bo_1
+    7400000: Bo_Vibrate_2
+    7400002: Bo_Up
     9500000: //RootNode
-    13700000: //RootNode
+    13700000: Bo_1
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mat
-    second: {fileID: 2100000, guid: 8b05ab5bc626a4d469f3c811915f6f70, type: 2}
+      name: Body
+    second: {fileID: 2100000, guid: b34cdd2f6b0a2784cbb72ca8a4bfb44e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,17 +121,45 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Lotus_Open
+      name: Bo_Vibrate_2
       takeName: CINEMA_4D_Main
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Bo_Up
+      takeName: CINEMA_4D_Main
+      firstFrame: 180
+      lastFrame: 340
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

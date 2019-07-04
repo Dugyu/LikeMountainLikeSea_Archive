@@ -12,12 +12,15 @@ public class Fish
     public Vector3 pos = Vector3.zero;
     public Vector3 vel = Vector3.zero;
     public Vector3 acc = Vector3.zero;
-
-    public Vector3 outterTarget;
+    public static Vector3 outterTarget;
 
     public float m = 1.0f;
-    public float maxSpeed = 0.1f;
-    public float maxForce = 0.005f;
+    public float maxSpeed = 0.05f;
+    public float maxForce = 0.0005f;
+
+    Vector3 instTarget;
+    Vector3 smoothTarget;
+    public float targetingSpeed = 0.01f; //0 to 1
 
 
     // limited resources
@@ -61,17 +64,26 @@ public class Fish
     // --------------------------------------
     public void Move()
     {
+
         
-        acc += Seek(outterTarget)/m;
+        smoothTarget = pos + vel;
+
+        acc += Seek(outterTarget)/m *1.5f;
         vel += acc;
         vel = Vector3.ClampMagnitude(vel, maxSpeed);
-        if(obj.transform.forward == Vector3.up)
+
+        instTarget = pos + vel;
+
+        smoothTarget = smoothTarget * (1.0f - targetingSpeed) + instTarget * targetingSpeed;
+
+
+        if (obj.transform.forward == Vector3.up)
         {
-            obj.transform.LookAt(pos + vel,Vector3.forward);
+            obj.transform.LookAt(smoothTarget, Vector3.forward);
         }
         else
         {
-            obj.transform.LookAt(pos + vel);
+            obj.transform.LookAt(smoothTarget);
         }
         pos += vel;
         acc = Vector3.zero;
@@ -81,7 +93,7 @@ public class Fish
     Vector3 Seek(Vector3 target)
     {
         Vector3 desired = target - pos;
-        
+
         desired.Normalize();
         desired *= maxSpeed;
         Vector3 steer = desired - vel;
@@ -104,7 +116,7 @@ public class Fish
 
         sep *= (1.0f);
         ali *= (1.5f);
-        coh *= (1.0f);
+        coh *= (0.8f);
 
         ApplyForce(sep);
         ApplyForce(ali);
@@ -122,7 +134,7 @@ public class Fish
 
     Vector3 Separate(List<Fish> fishs)
     {
-        float desiredSeparation = 0.5f;
+        float desiredSeparation =0.8f;
         Vector3 steer = Vector3.zero;
         int count = 0;
 

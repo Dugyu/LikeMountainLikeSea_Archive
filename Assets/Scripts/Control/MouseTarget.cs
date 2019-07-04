@@ -12,10 +12,10 @@ public class MouseTarget : MonoBehaviour
     {
         shoal = new Shoal();
         fish = new Fish(fishTemplate);
-        Vector3 target = ray.GetPoint(10.0f);
-        Vector3 origin = ray.GetPoint(2.0f);
+        Vector3 target = ray.GetPoint(5.0f);
+        Vector3 origin = ray.GetPoint(0.5f);
         fish.pos = origin;
-        fish.outterTarget = target;
+        Fish.outterTarget = target;
         shoal.AddFish(fish);
     }
     // Update is called once per frame
@@ -25,13 +25,14 @@ public class MouseTarget : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             fish = new Fish(fishTemplate);
-            Vector3 target = ray.GetPoint(10.0f);
-            Vector3 origin = ray.GetPoint(2.0f);
+ 
+            Vector3 origin = ray.GetPoint(0.5f);
             fish.pos = origin;
-            fish.outterTarget = target;
+            
             shoal.AddFish(fish);
         }
-
+        Vector3 target = ray.GetPoint(5.0f);
+        Fish.outterTarget = target;
         shoal.Run();
     }
 
