@@ -23,10 +23,9 @@ public class Fish
     public float targetingSpeed = 0.01f; //0 to 1
 
 
-    // limited resources
+    // ------------Limited resources--------------------
     static LinkedList<int> unusedIndices = new LinkedList<int>();
     static int lastIndex = 1;
-
 
     static int getIndex()
     {
@@ -44,7 +43,6 @@ public class Fish
 
         return idx;
     }
-
     static void releaseIndex(int idx)
     {
         unusedIndices.AddLast(idx);
@@ -52,8 +50,6 @@ public class Fish
 
 
     // --------------Initialize-----------------
-
-
     public Fish(GameObject _fishTemplate)
     {
         id = getIndex();
@@ -64,8 +60,6 @@ public class Fish
     // --------------------------------------
     public void Move()
     {
-
-        
         smoothTarget = pos + vel;
 
         acc += Seek(outterTarget)/m *1.5f;
