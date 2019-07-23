@@ -56,21 +56,15 @@ public class Fish
         obj = Object.Instantiate(_fishTemplate);
     }
 
-
     // --------------------------------------
     public void Move()
     {
         smoothTarget = pos + vel;
-
         acc += Seek(outterTarget)/m *1.5f;
         vel += acc;
         vel = Vector3.ClampMagnitude(vel, maxSpeed);
-
         instTarget = pos + vel;
-
         smoothTarget = smoothTarget * (1.0f - targetingSpeed) + instTarget * targetingSpeed;
-
-
         if (obj.transform.forward == Vector3.up)
         {
             obj.transform.LookAt(smoothTarget, Vector3.forward);
@@ -79,7 +73,7 @@ public class Fish
         {
             obj.transform.LookAt(smoothTarget);
         }
-        pos += vel;
+        pos += vel * 0.95f;
         acc = Vector3.zero;
         obj.transform.position = pos;
     }
