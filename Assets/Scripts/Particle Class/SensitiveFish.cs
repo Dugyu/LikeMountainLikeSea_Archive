@@ -18,9 +18,9 @@ public class SensitiveFish
     // Once an enemy enters the actionRange,
     // fish will consider all enemies inside sensingRange 
     // to choose a better direction to run away
-    static List<GameObject> enemyList = new List<GameObject>();
-    static float sensingRange = 1.0f;
-    static float actionRange = 0.25f;
+    public static List<GameObject> enemyList = new List<GameObject>();
+    static float sensingRange = 9.0f;
+    static float actionRange =4.0f;
     public bool inDanger = false;
     public List<Vector3> dangerList = new List<Vector3>();
 
@@ -58,17 +58,36 @@ public class SensitiveFish
 
     public void Move()
     {
-         vel += acc;
+         Separate();
+         ApplyForce();
+         Debug.Log(acc);
+         vel += acc * 0.05f;
          vel *= 0.95f;
          pos += vel;
          obj.transform.position = pos;
-         acc = Vector3.zero;                       // acceleration is instant
+         acc = Vector3.zero;
+        // acceleration is instant
     }
+
+
+    public void Separate()
+    {
+        Vector3 separateForce = CalculateForce();
+        if (separateForce != Vector3.zero)
+        {
+            AddImpuseForce(1, separateForce);
+        }
+    }
+
+
 
     public void ApplyForce()
     {
-        Vector3 force = forceQueue.Dequeue();
-        acc = force / m;
+        if (forceQueue.Count > 0)
+        {
+            Vector3 force = forceQueue.Dequeue();
+            acc = force;
+        }
     }
 
     public void AddImpuseForce(int duration, Vector3 force)
@@ -81,23 +100,37 @@ public class SensitiveFish
 
     public Vector3 CalculateForce()
     {
+        DangerDetect();
         if (!inDanger) return Vector3.zero;
         else
         {
             Vector3 awayDirection = Vector3.zero;
             foreach (Vector3 dir in dangerList)
             {
+               
                 awayDirection += dir;
             }
-            return awayDirection * dangerList.Count;
+
+            Vector3 force = awayDirection* dangerList.Count;
+            return force;
+        }
+    }
+
+    public void DangerDetect()
+    {
+        dangerList.Clear();
+        foreach(GameObject enemy in enemyList)
+        {
+            EvaluateEnemy(enemy);
         }
     }
 
 
-    public int DangerDetect(GameObject enemy)
+
+    public void EvaluateEnemy(GameObject enemy)
     {
         Vector3 ePos = enemy.transform.position;
-        Vector3 direction = ePos - pos;  // towards this fish
+        Vector3 direction = pos - ePos;  // towards this fish
         float sqrDist = direction.sqrMagnitude;
         if(sqrDist < sensingRange)
         {
@@ -105,10 +138,15 @@ public class SensitiveFish
             if(sqrDist < actionRange)
             {
                 inDanger = true;
-                return 2;
+                //return 2;
             }
-            return 1;
+            //return 1;
         }
-        return 0;
+        //return 0;
+    }
+
+    public static void AddEnemy(GameObject enemy)
+    {
+        enemyList.Add(enemy);
     }
 }
