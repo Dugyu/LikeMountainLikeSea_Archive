@@ -9,6 +9,7 @@ public class Fish
     public int id;
 
     public GameObject obj;
+    public Transform trans;
     public Vector3 pos = Vector3.zero;
     public Vector3 vel = Vector3.zero;
     public Vector3 acc = Vector3.zero;
@@ -54,40 +55,57 @@ public class Fish
     {
         id = getIndex();
         obj = Object.Instantiate(_fishTemplate);
+        trans = obj.transform;
     }
 
     // --------------------------------------
     public void Move()
     {
-        smoothTarget = pos + vel;
+        //smoothTarget = pos + vel;
+        //acc += Seek(outterTarget)/m *1.5f;
+        //vel += acc;
+        //vel = Vector3.ClampMagnitude(vel, maxSpeed);
+        //instTarget = pos + vel;
+        //smoothTarget = smoothTarget * (1.0f - targetingSpeed) + instTarget * targetingSpeed;
+        //if (trans.forward == Vector3.up)
+        //{
+        //    trans.LookAt(smoothTarget, Vector3.forward);
+        //}
+        //else
+        //{
+        //    trans.LookAt(smoothTarget);
+        //}
+        //pos += vel * 0.95f;
+        //acc = Vector3.zero;
+        //trans.position = pos;
+
         acc += Seek(outterTarget)/m *1.5f;
-        vel += acc;
-        vel = Vector3.ClampMagnitude(vel, maxSpeed);
-        instTarget = pos + vel;
-        smoothTarget = smoothTarget * (1.0f - targetingSpeed) + instTarget * targetingSpeed;
-        if (obj.transform.forward == Vector3.up)
+        vel += acc * 0.5f;
+        vel *= 0.95f;
+        pos += vel;
+        acc = Vector3.zero;
+        Draw();
+    }
+
+
+
+    //------------ Draw Obj ------------------------------
+    void Draw()
+    {
+        trans.position = pos;
+
+        if (trans.forward == Vector3.up)
         {
-            obj.transform.LookAt(smoothTarget, Vector3.forward);
+            trans.LookAt(pos + vel, Vector3.forward);
         }
         else
         {
-            obj.transform.LookAt(smoothTarget);
+            trans.LookAt(pos + vel);
         }
-        pos += vel * 0.95f;
-        acc = Vector3.zero;
-        obj.transform.position = pos;
     }
 
-    Vector3 Seek(Vector3 target)
-    {
-        Vector3 desired = target - pos;
 
-        desired.Normalize();
-        desired *= maxSpeed;
-        Vector3 steer = desired - vel;
-        steer = Vector3.ClampMagnitude(steer, maxForce);
-        return steer;
-    }
+
 
 
     public void Run(List<Fish> fishs)
@@ -220,4 +238,15 @@ public class Fish
             return Vector3.zero;
         }
     }
+    Vector3 Seek(Vector3 target)
+        {
+            Vector3 desired = target - pos;
+
+            desired.Normalize();
+            desired *= maxSpeed;
+            Vector3 steer = desired - vel;
+            steer = Vector3.ClampMagnitude(steer, maxForce);
+            return steer;
+        }
+
 }

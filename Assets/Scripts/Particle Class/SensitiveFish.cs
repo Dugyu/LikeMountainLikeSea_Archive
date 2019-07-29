@@ -20,7 +20,7 @@ public class SensitiveFish
     // to choose a better direction to run away
     public static List<GameObject> enemyList = new List<GameObject>();
     static float sensingRange = 9.0f;
-    static float actionRange =4.0f;
+    static float actionRange = 4.0f;
     public bool inDanger = false;
     public List<Vector3> dangerList = new List<Vector3>();
 
@@ -60,13 +60,22 @@ public class SensitiveFish
     {
          Separate();
          ApplyForce();
-         Debug.Log(acc);
-         vel += acc * 0.05f;
+         vel += acc * 0.01f;
          vel *= 0.95f;
          pos += vel;
          obj.transform.position = pos;
          acc = Vector3.zero;
         // acceleration is instant
+    }
+
+
+    public void ApplyForce()
+    {
+        if (forceQueue.Count > 0)
+        {
+            Vector3 force = forceQueue.Dequeue();
+            acc = force;
+        }
     }
 
 
@@ -80,15 +89,6 @@ public class SensitiveFish
     }
 
 
-
-    public void ApplyForce()
-    {
-        if (forceQueue.Count > 0)
-        {
-            Vector3 force = forceQueue.Dequeue();
-            acc = force;
-        }
-    }
 
     public void AddImpuseForce(int duration, Vector3 force)
     {
@@ -119,6 +119,7 @@ public class SensitiveFish
     public void DangerDetect()
     {
         dangerList.Clear();
+        inDanger = false;
         foreach(GameObject enemy in enemyList)
         {
             EvaluateEnemy(enemy);

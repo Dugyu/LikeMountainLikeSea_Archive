@@ -15,7 +15,7 @@ public class ApproachFish : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             sensitiveFish = new SensitiveFish(fishTemplate);
-            sensitiveFish.pos = Random.insideUnitSphere * 2;
+            sensitiveFish.pos = Random.insideUnitSphere * 2 + fishTemplate.transform.position;
             sensitiveFishShoal.Add(sensitiveFish);
         }
 
@@ -26,9 +26,9 @@ public class ApproachFish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (SensitiveFish sensitiveFish in sensitiveFishShoal)
+        foreach (SensitiveFish fish in sensitiveFishShoal)
         {
-            sensitiveFish.Move();
+            fish.Move();
         }
     }
 }
