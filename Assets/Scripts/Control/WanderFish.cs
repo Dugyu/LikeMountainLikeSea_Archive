@@ -11,10 +11,10 @@ public class WanderFish : MonoBehaviour
     void Start()
     {
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 30; i++)
         {
             amiableFish = new AmiableFish(fishTemplate);
-            amiableFish.pos = Random.insideUnitSphere * 2 + fishTemplate.transform.position;
+            amiableFish.pos = Random.insideUnitSphere  + fishTemplate.transform.position ;
             amiableFishShoal.Add(amiableFish);
         }
     }

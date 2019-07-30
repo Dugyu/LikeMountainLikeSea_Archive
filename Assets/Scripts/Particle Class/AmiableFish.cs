@@ -10,11 +10,15 @@ public class AmiableFish
     public int id;
     public GameObject obj;
     public Transform trans;
+    public GameObject collisionPt;
+
+    public static GameObject boundaryMesh;
 
     public Vector3 pos = Vector3.zero;
     public Vector3 vel = Vector3.zero;
     public Vector3 acc = Vector3.zero;
-    public Queue<Vector3> forceQueue = new Queue<Vector3>();
+    public Queue<Vector3> wanderForceQueue = new Queue<Vector3>();
+    public Queue<Vector3> boundaryForceQueue = new Queue<Vector3>();
 
     public float wanderTheta;
 
@@ -54,15 +58,16 @@ public class AmiableFish
         id = getIndex();
         obj = Object.Instantiate(_fishTemplate);
         trans = obj.transform;
-    }
+}
 
-    public void Move()
+public void Move()
     {
         ApplyForce();
         vel += acc * 0.5f;
         vel *= 0.95f;
         pos += vel;        
         acc = Vector3.zero;           // acceleration is instant
+        Boundary();
         Draw();
     }
 
@@ -84,10 +89,16 @@ public class AmiableFish
     //------------ Apply Forces --------------------------
     void ApplyForce()
     {
-        if (forceQueue.Count > 0)
+        if (wanderForceQueue.Count > 0)
         {
-            Vector3 force = forceQueue.Dequeue();
-            acc = force;
+            Vector3 force = wanderForceQueue.Dequeue();
+            acc += force;
+        }
+
+        if (boundaryForceQueue.Count > 0)
+        {
+            Vector3 force = boundaryForceQueue.Dequeue();
+            acc += force;
         }
     }
 
@@ -101,13 +112,32 @@ public class AmiableFish
 
         Vector3 vz = obj.transform.forward;   // forward 
         Vector3 vy = obj.transform.up;        // up
-        Vector3 vx = Vector3.Cross(vy, vz);   //
+        Vector3 vx = Vector3.Cross(vy, vz);   // right
 
         Vector3 circlePt = vx * Mathf.Cos(wanderTheta) + vz * Mathf.Sin(wanderTheta);
         Vector3 target = pos + vz * wanderCircleDistance + circlePt * wanderCircleRadius;
 
-        forceQueue.Enqueue(Seek(target));
+        wanderForceQueue.Enqueue(Seek(target));
     }
+
+    public void Boundary()
+    {
+        float boundaryDist = 2;
+        int layerMask = 1 << 16;
+        RaycastHit hit;
+
+        if(Physics.Raycast(pos, trans.forward, out hit, boundaryDist, layerMask))
+        {
+            //Debug.Log(hit.point);
+            //Debug.DrawRay(hit.point, hit.normal, new Color(0, 0, 1));
+
+            Vector3 target = pos + hit.normal;
+
+            boundaryForceQueue.Enqueue(Seek(target));
+        }
+
+    }
+
 
     Vector3 Seek(Vector3 target)
     {
