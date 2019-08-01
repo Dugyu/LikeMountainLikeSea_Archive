@@ -10,6 +10,7 @@ public class MouseTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fishTemplate.transform.position = new Vector3(-100, 100, 100);
         shoal = new Shoal();
         fish = new Fish(fishTemplate);
         Vector3 target = ray.GetPoint(5.0f);

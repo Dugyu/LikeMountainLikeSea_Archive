@@ -29,6 +29,7 @@ public class HololensTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fishTemplate.transform.position = new Vector3(-100, 100, 100);
         shoal = new Shoal();
         fish = new Fish(fishTemplate);
         Vector3 target = new Vector3(0.0f,0.0f,5.0f);

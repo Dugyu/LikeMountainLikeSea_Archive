@@ -26,7 +26,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        float speed = 5;
+        float speed = 0.5f;
         foreach (KeyCode direction in directions.Keys)
         {
             if (Input.GetKey(direction))

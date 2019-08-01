@@ -11,8 +11,10 @@ public class AmiableFish
     public GameObject obj;
     public Transform trans;
     public GameObject collisionPt;
-
-    public static GameObject boundaryMesh;
+    public float wanderCircleRadius = 0.5f;
+    public float wanderCircleDistance = 3;
+    public float wanderTheta = 0;
+    public float wanderThetaDelta = 0.2f;
 
     public Vector3 pos = Vector3.zero;
     public Vector3 vel = Vector3.zero;
@@ -20,13 +22,12 @@ public class AmiableFish
     public Queue<Vector3> wanderForceQueue = new Queue<Vector3>();
     public Queue<Vector3> boundaryForceQueue = new Queue<Vector3>();
 
-    public float wanderTheta;
+
 
     public static List<GameObject> playersList = new List<GameObject>();
 
-
-    static float maxSpeed = 0.05f;
-    static float maxForce = 0.0005f;
+    public float maxSpeed = 0.05f;
+    public float maxForce = 0.0005f;
 
 
     //------------ Limited Resources ----------------------
@@ -58,9 +59,29 @@ public class AmiableFish
         id = getIndex();
         obj = Object.Instantiate(_fishTemplate);
         trans = obj.transform;
+        Place();
 }
 
-public void Move()
+    public void Place()
+    {
+        trans.localScale = Random.Range(0.5f,1.0f) * trans.localScale ;
+    }
+
+    public void SetWander(float _wanderCircleRadius, float _wanderCircleDistance, float _wanderTheta,float _wanderThetaDelta)
+    {
+        wanderCircleRadius = _wanderCircleRadius;
+        wanderCircleDistance = _wanderCircleDistance;
+        wanderTheta = _wanderTheta;
+        wanderThetaDelta = _wanderThetaDelta;
+    }
+    
+    public void SetMaxSpeed(float _maxSpeed, float _maxForce)
+    {
+        maxSpeed = _maxSpeed;
+        maxForce = _maxForce;
+    }
+
+    public void Move()
     {
         ApplyForce();
         vel += acc * 0.5f;
@@ -105,10 +126,9 @@ public void Move()
     //------------ Behaviours ----------------------------
     public void Wander()
     {
-        float wanderCircleRadius = 0.5f;
-        float wanderCircleDistance = 3;
 
-        wanderTheta += Random.Range(-0.5f, 0.5f);
+
+        wanderTheta += Random.Range(-wanderThetaDelta, wanderThetaDelta);
 
         Vector3 vz = obj.transform.forward;   // forward 
         Vector3 vy = obj.transform.up;        // up

@@ -12,14 +12,14 @@ public class ApproachFish : MonoBehaviour
     void Start()
     {
         SensitiveFish.AddEnemy(player);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 30; i++)
         {
             sensitiveFish = new SensitiveFish(fishTemplate);
             sensitiveFish.pos = Random.insideUnitSphere * 2 + fishTemplate.transform.position;
             sensitiveFishShoal.Add(sensitiveFish);
         }
 
-        fishTemplate.GetComponent<MeshRenderer>().enabled = false;
+        fishTemplate.SetActive(false);
 
     }
 
