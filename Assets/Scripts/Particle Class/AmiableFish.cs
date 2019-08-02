@@ -10,7 +10,8 @@ public class AmiableFish
     public int id;
     public GameObject obj;
     public Transform trans;
-    public GameObject collisionPt;
+
+
     public float wanderCircleRadius = 0.5f;
     public float wanderCircleDistance = 3;
     public float wanderTheta = 0;
@@ -60,13 +61,14 @@ public class AmiableFish
         obj = Object.Instantiate(_fishTemplate);
         trans = obj.transform;
         Place();
-}
+    }
 
     public void Place()
     {
         trans.localScale = Random.Range(0.5f,1.0f) * trans.localScale ;
     }
 
+    //------------ Updates --------------------------------
     public void SetWander(float _wanderCircleRadius, float _wanderCircleDistance, float _wanderTheta,float _wanderThetaDelta)
     {
         wanderCircleRadius = _wanderCircleRadius;
@@ -123,7 +125,7 @@ public class AmiableFish
         }
     }
 
-    //------------ Behaviours ----------------------------
+    //------------ High Level Behaviours ----------------------------
     public void Wander()
     {
 
@@ -148,17 +150,14 @@ public class AmiableFish
 
         if(Physics.Raycast(pos, trans.forward, out hit, boundaryDist, layerMask))
         {
-            //Debug.Log(hit.point);
-            //Debug.DrawRay(hit.point, hit.normal, new Color(0, 0, 1));
 
             Vector3 target = pos + hit.normal;
 
             boundaryForceQueue.Enqueue(Seek(target));
         }
-
     }
 
-
+    //------------ Low Level Behaviours -----------------------------
     Vector3 Seek(Vector3 target)
     {
         Vector3 desired = target - pos;
