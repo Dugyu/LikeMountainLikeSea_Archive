@@ -7,10 +7,11 @@ Properties {
 }
 
 Subshader {
-    Tags{"Queue" = "Transparent" "RenderType" = "Transparent"}
+    Tags{ "RenderType" = "Transparent" "Queue" = "Transparent" "IgnoreProjector"="True"}
     LOD 100
 	Blend SrcAlpha One
 	ZWrite Off
+
 
 	Pass {
 		CGPROGRAM
@@ -73,7 +74,9 @@ Subshader {
 				float rimLight = 1.0 - max(0.0, dot(fragNormal,toCam));
 				rimLight = pow(rimLight, 2);
 				//col.rgb = saturate(col.rgb + rimLight);
-				return col*_rimColor;
+				col.a = _rimColor.a;
+				return col;
+				//return col*_rimColor;
 			}
 
 

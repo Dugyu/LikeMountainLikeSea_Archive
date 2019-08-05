@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12226259f15865f4c8847a545783f0a8
+guid: 460252844c8b4464c9037221681e3780
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -264,6 +264,7 @@ ModelImporter:
     400256: //RootNode
     400258: XixiHiPoly
     2100000: Mat.2
+    2100002: Mat
     4300000: XixiHiPoly
     7400000: CINEMA_4D_Main
     9500000: //RootNode
@@ -272,8 +273,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mat.2
+      name: Mat
     second: {fileID: 2100000, guid: 5ba71dd58c486814b8f1474fce0341c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.2
+    second: {fileID: 2100000, guid: ac6f605145cf48b4f9639bba9a845a88, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -284,7 +290,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: bone
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
