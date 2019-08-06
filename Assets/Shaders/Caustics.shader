@@ -15,15 +15,11 @@
 	}
 		SubShader
 		{
-			Tags { "RenderType" = "Opaque"  "Queue" = "Transparent+1" "IgnoreProjector" = "True"}
+			Tags { "RenderType" = "Transparent"  "Queue" = "Transparent+1" "IgnoreProjector" = "True"}
 			LOD 100
 			Blend OneMinusDstColor One
 			Cull Off
 
-			GrabPass{
-				Name "BASE"
-				Tags{ "LightMode" = "Always" }
-					}
 			Pass
 			{
 				CGPROGRAM
@@ -60,12 +56,12 @@
 				{
 					v2f o;
 					UNITY_INITIALIZE_OUTPUT(v2f, o);
-					float4 tex = tex2Dlod(_NoiseTex, float4(v.uv.xy, 0, 0));//extra noise tex
+					float4 tex = tex2Dlod(_NoiseTex, float4(v.uv.xy, 0, 0));//use tex2lod because it is in vertex shader//extra noise tex
 					v.vertex.y += sin(_Time.z * _Speed + (v.vertex.x * v.vertex.z * _Amount * tex)) * _Height;//movement
 					o.vertex = UnityObjectToClipPos(v.vertex);
 					o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 
-					o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+					o.uv = TRANSFORM_TEX(v.uv, _MainTex);  //make sure texture scale and offset is applied correctly
 					o.scrPos = ComputeScreenPos(o.vertex);
 					UNITY_TRANSFER_FOG(o,o.vertex);
 					return o;
@@ -77,12 +73,12 @@
 					fixed distortx = tex2D(_NoiseTex, (i.worldPos.xz * _Scale) + (_Time.x * 2)).r;// distortion alpha
 
 					half4 col = tex2D(_MainTex, (i.worldPos.xz * _Scale) - (distortx * _TextureDistort));// texture times tint;        
-					half depth = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos))); // depth
-					half4 foamLine = 1 - saturate(_Foam* (depth - i.scrPos.w));// foam line by comparing depth and screenposition
+					//half depth = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos))); // depth
+					//half4 foamLine = 1 - saturate(_Foam* (depth - i.scrPos.w));// foam line by comparing depth and screenposition
 					col *= _Color;
-					col += (step(0.4 * distortx,foamLine) * _FoamC); // add the foam line and tint to the texture
+					//col += (step(0.4 * distortx,foamLine) * _FoamC); // add the foam line and tint to the texture
 					col = saturate(col) * col.a;
-
+					clip(col.g > 0.5 ? 1 : -1);
 					return   col;
 				}
 				ENDCG
