@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfd20ae5ba15c5649a589cb3773ed4d8
+guid: 42e045a7831ffd04b811a5470cb6aa56
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: Mat
     2300000: //RootNode
     3300000: //RootNode
-    4300000: WenyaoSDS_1
+    4300000: Wenyao
   externalObjects:
   - first:
       type: UnityEngine:Material
