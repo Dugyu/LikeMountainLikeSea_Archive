@@ -30,7 +30,7 @@ public class MouseCameraMove : MonoBehaviour
         mouseLook += smoothV;
 
         // vector3.right means the x-axis
-        //transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        //transform.rotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         transform.localRotation = Quaternion.AngleAxis(mouseLook.x, transform.up);
     }
 }
