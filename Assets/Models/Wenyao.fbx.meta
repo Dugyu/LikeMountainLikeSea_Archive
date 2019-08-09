@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4a8de8e7a6b94c45b5b9fbb8b008dfe
+guid: 07650dda487e2ce4884e08fb2f6552ad
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -94,8 +94,8 @@ ModelImporter:
     100176: TailTop_12
     100178: TailTop_13
     100180: TailTop_9
-    100182: Wenyao
-    100184: //RootNode
+    100182: //RootNode
+    100184: Wenyao
     400000: BeardLeft_10
     400002: BeardLeft_11
     400004: BeardLeft_12
@@ -187,8 +187,8 @@ ModelImporter:
     400176: TailTop_12
     400178: TailTop_13
     400180: TailTop_9
-    400182: Wenyao
-    400184: //RootNode
+    400182: //RootNode
+    400184: Wenyao
     2100000: Mat
     4300000: Wenyao
     7400000: CINEMA_4D_Main
@@ -230,8 +230,8 @@ ModelImporter:
     - serializedVersion: 16
       name: CINEMA_4D_Main
       takeName: CINEMA_4D_Main
-      firstFrame: 0
-      lastFrame: 150
+      firstFrame: 50
+      lastFrame: 102
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -239,7 +239,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
