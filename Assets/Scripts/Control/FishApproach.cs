@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ApproachFish : MonoBehaviour
+public class FishApproach : MonoBehaviour
 {
     public GameObject fishTemplate;
     public GameObject player;
