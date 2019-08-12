@@ -1,14 +1,85 @@
 fileFormatVersion: 2
-guid: 7b1e2d9f0485be144af3b8554c093a0e
+guid: 9a3fddfa65f513a4dae062ffc29310d6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: LeftWing_2
+    100002: LeftWing_3
+    100004: LeftWing_4
+    100006: LeftWing_5
+    100008: LeftWing_6
+    100010: Neck_2
+    100012: Neck_3
+    100014: Neck_4
+    100016: Neck_5
+    100018: RightWing_2
+    100020: RightWing_3
+    100022: RightWing_4
+    100024: RightWing_5
+    100026: RightWing_6
+    100028: Root
+    100030: //RootNode
+    100032: RupiSDS
+    100034: Spine_1
+    100036: Spine_10
+    100038: Spine_11
+    100040: Spine_12
+    100042: Spine_13
+    100044: Spine_14
+    100046: Spine_15
+    100048: Spine_16
+    100050: Spine_17
+    100052: Spine_18
+    100054: Spine_19
+    100056: Spine_2
+    100058: Spine_3
+    100060: Spine_4
+    100062: Spine_5
+    100064: Spine_6
+    100066: Spine_7
+    100068: Spine_8
+    100070: Spine_9
+    400000: LeftWing_2
+    400002: LeftWing_3
+    400004: LeftWing_4
+    400006: LeftWing_5
+    400008: LeftWing_6
+    400010: Neck_2
+    400012: Neck_3
+    400014: Neck_4
+    400016: Neck_5
+    400018: RightWing_2
+    400020: RightWing_3
+    400022: RightWing_4
+    400024: RightWing_5
+    400026: RightWing_6
+    400028: Root
+    400030: //RootNode
+    400032: RupiSDS
+    400034: Spine_1
+    400036: Spine_10
+    400038: Spine_11
+    400040: Spine_12
+    400042: Spine_13
+    400044: Spine_14
+    400046: Spine_15
+    400048: Spine_16
+    400050: Spine_17
+    400052: Spine_18
+    400054: Spine_19
+    400056: Spine_2
+    400058: Spine_3
+    400060: Spine_4
+    400062: Spine_5
+    400064: Spine_6
+    400066: Spine_7
+    400068: Spine_8
+    400070: Spine_9
     2100000: Mat
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: RupiSDS_1
+    4300000: RupiSDS
+    7400000: CINEMA_4D_Main
+    9500000: //RootNode
+    13700000: RupiSDS
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -66,8 +137,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -89,12 +160,12 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
