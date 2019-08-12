@@ -11,8 +11,6 @@ public class FishWander : MonoBehaviour
 
     private BannerManager bannerManager;
 
-  
-
     int heluoTimer;
     int heluoLoop;
     int gegeTimer;
@@ -31,7 +29,7 @@ public class FishWander : MonoBehaviour
     AmiableFish heluo;
 
     Vector3 gegeOrigin = new Vector3(0, 0.5f, 2.52f);
-    Vector3 heluoOrigin = new Vector3(-1.5f,0.5f, 1.68f);
+    Vector3 heluoOrigin = new Vector3(-1.2f,0.5f, 2.05f);
 
 
     private void Awake()

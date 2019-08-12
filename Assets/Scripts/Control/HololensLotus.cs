@@ -11,6 +11,13 @@ public class HololensLotus : MonoBehaviour
 
     // Manager Class
     private EnvManager LotusManager;
+    private BannerManager bannerManager;
+
+
+    int lotusTimer;
+    int lotusLoop;
+    Vector3 wenyaoBannerOrigin = new Vector3(1.2f,1.08f,0.93f);
+    Vector3 boBannerOrigin = new Vector3(0.7f,1.08f,1.58f);
 
     // Hand Interaction
     private GestureRecognizer recognizer;
@@ -22,7 +29,7 @@ public class HololensLotus : MonoBehaviour
     private void Awake()
     {
         LotusManager = EnvManager.Instance;
-
+        bannerManager = BannerManager.Instance;
     }
 
     // Start is called before the first frame update
@@ -48,7 +55,71 @@ public class HololensLotus : MonoBehaviour
                 dispatchQueue.Dequeue()();
             }
         }
+
+
+        if (bannerManager.InBanner && bannerManager.CurrentBanner != null)
+        {
+            string currentBanner = bannerManager.CurrentBanner;
+
+            switch (currentBanner)
+            {
+                case "wenyao":
+                    WenyaoUpdate();
+                    break;
+                case "bo":
+                    BoUpdate();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+
+
+
+
     }
+
+    private void WenyaoUpdate()
+    {
+        if(lotusTimer % 64 == 0 && lotusLoop < 10)
+        {
+            Lotus lotusInAir = new Lotus(lotusTemplate, UnityEngine.Random.insideUnitSphere + wenyaoBannerOrigin);
+            LotusManager.AddLotus(lotusInAir);
+            lotusLoop++;
+        }
+
+
+        if (lotusTimer == 130)
+        {
+            lotusTimer = 0;
+
+        }
+        lotusTimer++;
+    }
+
+    private void BoUpdate()
+    {
+        if (lotusTimer % 64 == 0 && lotusLoop < 10)
+        {
+            Lotus lotusInAir = new Lotus(lotusTemplate, UnityEngine.Random.insideUnitSphere + boBannerOrigin);
+            LotusManager.AddLotus(lotusInAir);
+            lotusLoop++;
+        }
+        if (lotusTimer == 130)
+        {
+            lotusTimer = 0;
+
+        }
+        lotusTimer++;
+    }
+
+
+
+
+
+
 
 
     private void HandleTap(TappedEventArgs tapEvent)
@@ -61,8 +132,15 @@ public class HololensLotus : MonoBehaviour
         Lotus lotusInAir = new Lotus(lotusTemplate, PointInAir);
 
         LotusManager.AddLotus(lotusInAir);
-        throw new NotImplementedException();
+
     }
+
+
+
+
+
+
+
 
     private void OnManupulationUpdated(ManipulationUpdatedEventArgs obj)
     {

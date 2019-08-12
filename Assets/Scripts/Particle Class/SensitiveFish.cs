@@ -20,7 +20,7 @@ public class SensitiveFish
     // to choose a better direction to run away
     public static List<GameObject> enemyList = new List<GameObject>();
     static float sensingRange = 9.0f;
-    static float actionRange = 4.0f;
+    static float actionRange = 1.0f;
     public bool inDanger = false;
     public List<Vector3> dangerList = new List<Vector3>();
 

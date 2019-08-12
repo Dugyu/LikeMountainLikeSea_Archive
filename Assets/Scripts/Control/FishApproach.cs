@@ -4,31 +4,83 @@ using UnityEngine;
 
 public class FishApproach : MonoBehaviour
 {
-    public GameObject fishTemplate;
-    public GameObject player;
-    SensitiveFish sensitiveFish;
-    List<SensitiveFish> sensitiveFishShoal = new List<SensitiveFish>();
+    private BannerManager bannerManager;
+
+    int xixiTimer;
+    int xixiLoop;
+
+    public GameObject xixiTemplate;
+    public GameObject cam;
+    Vector3 xixiOrigin = new Vector3(-1.3f,0,0.8f);
+
+    SensitiveFish xixi;
+    List<SensitiveFish> xixiShoal = new List<SensitiveFish>();
+
+
+    private void Awake()
+    {
+        bannerManager = BannerManager.Instance;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        SensitiveFish.AddEnemy(player);
-        for (int i = 0; i < 30; i++)
-        {
-            sensitiveFish = new SensitiveFish(fishTemplate);
-            sensitiveFish.pos = Random.insideUnitSphere * 2 + fishTemplate.transform.position;
-            sensitiveFishShoal.Add(sensitiveFish);
-        }
+        SensitiveFish.AddEnemy(cam);
 
-        fishTemplate.SetActive(false);
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (SensitiveFish fish in sensitiveFishShoal)
+        if (bannerManager.InBanner && bannerManager.CurrentBanner != null)
+        {
+            string currentBanner = bannerManager.CurrentBanner;
+
+            switch (currentBanner)
+            {
+                case "xixi":
+                    XixiUpdate();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        foreach (SensitiveFish fish in xixiShoal)
         {
             fish.Move();
         }
+
+
+
     }
+
+
+    void XixiUpdate()
+    {
+
+        if (xixiTimer % 64 == 0 && xixiLoop < 5)
+        {
+            xixi = new SensitiveFish(xixiTemplate);
+
+            xixi.pos = Random.insideUnitSphere * 0.5f + xixiOrigin;
+            xixiShoal.Add(xixi);
+            xixiLoop++;
+        }
+
+        if (xixiTimer == 130)
+        {
+            xixiTimer = 0;
+
+        }
+        xixiTimer++;
+    }
+
+
+
+
 }
