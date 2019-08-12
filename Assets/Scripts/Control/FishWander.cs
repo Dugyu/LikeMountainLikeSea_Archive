@@ -20,8 +20,8 @@ public class FishWander : MonoBehaviour
     AmiableFish gege;
     AmiableFish heluo;
 
-    Vector3 gegeOrigin = new Vector3(0, 1, 2.5f);
-    Vector3 heluoOrigin = new Vector3(0, 1, 3);
+    Vector3 gegeOrigin = new Vector3(0, 0.5f, 2.52f);
+    Vector3 heluoOrigin = new Vector3(-1.5f,0.5f, 1.68f);
     // Start is called before the first frame update
     void Start()
     {
