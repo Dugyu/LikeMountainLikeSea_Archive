@@ -16,8 +16,8 @@ public class HololensLotus : MonoBehaviour
 
     int lotusTimer;
     int lotusLoop;
-    Vector3 wenyaoBannerOrigin = new Vector3(1.2f,1.08f,0.93f);
-    Vector3 boBannerOrigin = new Vector3(0.7f,1.08f,1.58f);
+    Vector3 wenyaoBannerOrigin = new Vector3(1.6f,1.08f,0.93f);
+    Vector3 boBannerOrigin = new Vector3(1.2f,1.08f,1.58f);
 
     // Hand Interaction
     private GestureRecognizer recognizer;
@@ -75,10 +75,6 @@ public class HololensLotus : MonoBehaviour
         }
 
 
-
-
-
-
     }
 
     private void WenyaoUpdate()
@@ -116,12 +112,6 @@ public class HololensLotus : MonoBehaviour
     }
 
 
-
-
-
-
-
-
     private void HandleTap(TappedEventArgs tapEvent)
     {
 
@@ -134,12 +124,6 @@ public class HololensLotus : MonoBehaviour
         LotusManager.AddLotus(lotusInAir);
 
     }
-
-
-
-
-
-
 
 
     private void OnManupulationUpdated(ManipulationUpdatedEventArgs obj)

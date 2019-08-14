@@ -59,7 +59,7 @@ public class LotusDropNew : MonoBehaviour
         for (int i = riseFishSchool.Count - 1; i > -1; i--)
         {
             RiseFish fish = riseFishSchool[i];
-            if (fish.IsOutRange(4.6f))
+            if (fish.IsOutRange(5.6f))
             {
                 riseFishSchool.RemoveAt(i);
                 fish.Release();

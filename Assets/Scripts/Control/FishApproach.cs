@@ -11,7 +11,7 @@ public class FishApproach : MonoBehaviour
 
     public GameObject xixiTemplate;
     public GameObject cam;
-    Vector3 xixiOrigin = new Vector3(-1.3f,0,0.8f);
+    Vector3 xixiOrigin = new Vector3(-1.37f,0,1.75f);
 
     SensitiveFish xixi;
     List<SensitiveFish> xixiShoal = new List<SensitiveFish>();

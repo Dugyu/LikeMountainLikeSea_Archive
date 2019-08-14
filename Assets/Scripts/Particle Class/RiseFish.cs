@@ -109,8 +109,7 @@ public class RiseFish
 
         int layerMask = 1 << 15;
         RaycastHit hit;
-
-        if (Physics.Raycast(pos, Vector3.up, out hit, layerMask))
+        if (Physics.Raycast(pos, Vector3.up, out hit, 20.0f, layerMask))
         {
             Vector3 target = hit.point;
             risingForceQueue.Enqueue(ArrivingAt(target, 2.0f));

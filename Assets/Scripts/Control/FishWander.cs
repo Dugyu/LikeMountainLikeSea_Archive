@@ -28,8 +28,8 @@ public class FishWander : MonoBehaviour
     AmiableFish gege;
     AmiableFish heluo;
 
-    Vector3 gegeOrigin = new Vector3(0, 0.5f, 2.52f);
-    Vector3 heluoOrigin = new Vector3(-1.2f,0.5f, 2.05f);
+    Vector3 gegeOrigin = new Vector3(0.47f, 0.5f, 2.52f);
+    Vector3 heluoOrigin = new Vector3(-0.42f,0.5f, 2.17f);
 
 
     private void Awake()
@@ -151,7 +151,7 @@ public class FishWander : MonoBehaviour
 
     void HeluoUpdate()
     {
-        if (timer % 64 == 0 && heluoLoop < 10)
+        if (timer % 64 == 0 && heluoLoop < 20)
         {
             heluo = new AmiableFish(heluoTemplate);
 

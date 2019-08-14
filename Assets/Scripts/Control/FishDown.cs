@@ -12,8 +12,9 @@ public class FishDown : MonoBehaviour
 
     public GameObject rupiTemplate;
     private GameObject rupi;
-    Vector3 rupiOrigin = new Vector3(-1.0f, 1.08f, 0.152f);
+    Vector3 rupiOrigin = new Vector3(-1.99f, 0.78f, 1.4f);
 
+    
     private void Awake()
     {
         bannerManager = BannerManager.Instance;
@@ -49,7 +50,7 @@ public class FishDown : MonoBehaviour
 
     void RupiUpdate()
     {
-        if (rupiTimer % 64 == 0 && rupiLoop < 20)
+        if (rupiTimer % 64 == 0 && rupiLoop < 40)
         {
             rupi = Instantiate(rupiTemplate);
             rupi.transform.position = Random.insideUnitSphere * 0.5f + rupiOrigin;
