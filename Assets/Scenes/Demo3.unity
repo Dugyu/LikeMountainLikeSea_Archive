@@ -888,15 +888,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400182, guid: 07650dda487e2ce4884e08fb2f6552ad, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.02
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400182, guid: 07650dda487e2ce4884e08fb2f6552ad, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.02
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400182, guid: 07650dda487e2ce4884e08fb2f6552ad, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.02
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 07650dda487e2ce4884e08fb2f6552ad, type: 3}
       propertyPath: m_Controller
@@ -16422,7 +16422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTrans: {fileID: 150268901}
-  useMouse: 0
+  useMouse: 1
   _fadeSpeed: 0.5
 --- !u!114 &1154452076
 MonoBehaviour:

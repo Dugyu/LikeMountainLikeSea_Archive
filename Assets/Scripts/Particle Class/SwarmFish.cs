@@ -119,12 +119,12 @@ public class SwarmFish
     //------------ High Level Behaviours -----------------------------
     public void Swarm(List<SwarmFish> fishSchool)
     {
-        float desiredSeparation = 4.0f;  // separation
-        float neighborDist = 25.0f;  // align and cohesion
+        float desiredSeparation = 0.09f;  // separation
+        float neighborDist = 1.0f;  // align and cohesion
 
         Vector3[] sums = new Vector3[3];  // store the sum of separation, alignment, cohesion
         int[] counts = new int[3];  // store the number of fish in each condition
-        float[] ratio = new float[] {5.0f, 0.8f, 1.0f};  // store the ratio of these three forces
+        float[] ratio = new float[] {0.1f, 1.0f, 1.0f};  // store the ratio of these three forces
 
 
         foreach (SwarmFish other in fishSchool)
@@ -160,13 +160,34 @@ public class SwarmFish
             if (counts[i] > 0)
             {
                Vector3 desired = sums[i] / counts[i];
-               Vector3 steer = SeekVelocity(desired, maxSpeed * ratio[i]);
+               Vector3 steer;
+               switch (i)
+                {
+                    case 1:
+                        // Alignment
+                        steer = SeekVelocity(desired, maxSpeed);
+                        alignForceQueue.Enqueue(steer * ratio[i]);
+                        break;
+                    case 2:
+                        // Cohesion
+                        steer = ArrivingAt(desired, 0.3f);
+                        cohesionForceQueue.Enqueue(steer * ratio[i]);
+                        break;
+                    default:
+                        // Separation
+                        steer = SeekVelocity(desired, maxSpeed);
+                        for(int j = 0; j < 10; j++)
+                        {
+                            separeteForceQueue.Enqueue(steer * ratio[i]);
+                        }
+                        break;
+                }
             }
         }
     }
     public void WanderThroughLotus()
     {
-        wanderLotusForceQueue.Enqueue(ArrivingAt(lotusTarget.pos, 1.0f) * 0.3f);
+        wanderLotusForceQueue.Enqueue(ArrivingAt(lotusTarget.pos, 0.5f) * 1.0f);
     }
     //------------ Low Level Behaviours -----------------------------
     Vector3 SeekVelocity(Vector3 desired, float speed)

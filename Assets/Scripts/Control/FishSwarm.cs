@@ -22,12 +22,6 @@ public class FishSwarm : MonoBehaviour
         LotusManager = EnvManager.Instance;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +31,7 @@ public class FishSwarm : MonoBehaviour
         // New Lotus Added
         if (lotusLastCount < localLotusList.Count)
         {
-            SwarmFish fish = new SwarmFish(swarmFishTemplate, Random.insideUnitSphere * 2);
+            SwarmFish fish = new SwarmFish(swarmFishTemplate, Random.insideUnitSphere * 1);
             swarmFishSchool.Add(fish);
             foreach (SwarmFish swarmFish in swarmFishSchool)
             {
@@ -50,7 +44,7 @@ public class FishSwarm : MonoBehaviour
         // Nothing Changed since Last Time
         else if(lotusLastCount > 0)
         {
-            if(timer == 200)
+            if(timer == 400)
             {
                 int selected = Random.Range(0, lotusLastCount);
                 foreach (SwarmFish swarmFish in swarmFishSchool)
@@ -72,7 +66,7 @@ public class FishSwarm : MonoBehaviour
             }
         }
 
-        if(timer == 240)
+        if(timer == 480)
         {
             timer = 0;
         }
