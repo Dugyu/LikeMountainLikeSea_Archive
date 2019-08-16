@@ -5,6 +5,10 @@ using UnityEngine;
 public class FishWander : MonoBehaviour
 {
 
+    //--------------For Generating Wandering Fish--------------
+    //--------------Gege and Heluo----------------------------
+
+
     //Manager
     int timer;
     int loop;
@@ -17,16 +21,17 @@ public class FishWander : MonoBehaviour
     int gegeLoop;
 
 
-    //Object Lists
-    List<AmiableFish> gegeShoal = new List<AmiableFish>();
-    List<AmiableFish> heluoShoal = new List<AmiableFish>();
+    // Store temporary and long-term Fish Objects
+    WanderFish gege;
+    WanderFish heluo;
+    List<WanderFish> gegeShoal = new List<WanderFish>();
+    List<WanderFish> heluoShoal = new List<WanderFish>();
 
 
-    // Templates
+    // Fish Instantiate Templates
     public GameObject gegeTemplate;
     public GameObject heluoTemplate;
-    AmiableFish gege;
-    AmiableFish heluo;
+
 
     Vector3 gegeOrigin = new Vector3(0.47f, 0.5f, 2.52f);
     Vector3 heluoOrigin = new Vector3(-0.42f,0.5f, 2.17f);
@@ -47,7 +52,7 @@ public class FishWander : MonoBehaviour
         // GEGE
         for (int i = 0; i < 1; i++)
         {
-            gege = new AmiableFish(gegeTemplate);
+            gege = new WanderFish(gegeTemplate);
             gege.pos = Random.insideUnitSphere  +  gegeOrigin;
             gege.SetWander(1.0f,4.0f,0.0f,0.2f);
             gege.SetMaxSpeed(0.1f,0.0005f);
@@ -56,7 +61,7 @@ public class FishWander : MonoBehaviour
 
         for (int i = 0; i < 1; i++)
         {
-            heluo = new AmiableFish(heluoTemplate);
+            heluo = new WanderFish(heluoTemplate);
             heluo.pos = Random.insideUnitSphere + heluoOrigin;
             heluo.SetWander(0.2f,2.0f, 0.0f, 0.3f);
             heluoShoal.Add(heluo);
@@ -66,10 +71,7 @@ public class FishWander : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
-
-        
+    {   
         if(bannerManager.InBanner && bannerManager.CurrentBanner != null)
         {
             string currentBanner = bannerManager.CurrentBanner;
@@ -88,35 +90,17 @@ public class FishWander : MonoBehaviour
         }
 
 
-        foreach (AmiableFish fish in gegeShoal)
+        foreach (WanderFish fish in gegeShoal)
         {
             fish.Wander();
             fish.Move();
         }
 
-        foreach (AmiableFish fish in heluoShoal)
+        foreach (WanderFish fish in heluoShoal)
         {
             fish.Wander();
             fish.Move();
         }
-
-        //if (timer % 32 == 0 && loop < 20)
-        //{
-        //    gege = new AmiableFish(gegeTemplate);
-        //    gege.pos = Random.insideUnitSphere + gegeOrigin;
-        //    gege.SetWander(1.0f, 4.0f, 0.0f, 0.2f);
-        //    gege.SetMaxSpeed(0.1f, 0.0005f);
-        //    gegeShoal.Add(gege);
-        //    loop++;
-        //}
-
-
-
-        //if (timer == 120)
-        //{
-        //    timer = 0;
-
-        //}
 
         timer++;
 
@@ -126,19 +110,15 @@ public class FishWander : MonoBehaviour
     void GegeUpdate()
     {
 
-
         if (gegeTimer % 32 == 0 && gegeLoop < 40)
         {
-            gege = new AmiableFish(gegeTemplate);
+            gege = new WanderFish(gegeTemplate);
             gege.pos = Random.insideUnitSphere + gegeOrigin;
             gege.SetWander(1.0f, 4.0f, 0.0f, 0.2f);
             gege.SetMaxSpeed(0.1f, 0.0005f);
             gegeShoal.Add(gege);
             gegeLoop++;
         }
-
-
-
        
         if (gegeTimer == 120)
         {
@@ -153,7 +133,7 @@ public class FishWander : MonoBehaviour
     {
         if (timer % 64 == 0 && heluoLoop < 20)
         {
-            heluo = new AmiableFish(heluoTemplate);
+            heluo = new WanderFish(heluoTemplate);
 
             heluo.pos = Random.insideUnitSphere * 0.5f + heluoOrigin;
             heluo.SetWander(0.2f, 2.0f, 0.0f, 0.3f);
@@ -170,12 +150,5 @@ public class FishWander : MonoBehaviour
         }
         heluoTimer++;
     }
-
-
-
-
-
-
-
 
 }

@@ -5660,7 +5660,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -16422,7 +16422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTrans: {fileID: 150268901}
-  useMouse: 1
+  useMouse: 0
   _fadeSpeed: 0.5
 --- !u!114 &1154452076
 MonoBehaviour:
@@ -16959,6 +16959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: bo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947374194823260697, guid: 2332c7416ccc233488e3670984086da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1947374194823296569, guid: 2332c7416ccc233488e3670984086da3,
         type: 3}

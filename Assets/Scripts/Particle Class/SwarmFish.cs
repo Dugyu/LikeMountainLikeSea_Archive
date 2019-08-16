@@ -124,7 +124,7 @@ public class SwarmFish
 
         Vector3[] sums = new Vector3[3];  // store the sum of separation, alignment, cohesion
         int[] counts = new int[3];  // store the number of fish in each condition
-        float[] ratio = new float[] {0.1f, 1.0f, 1.0f};  // store the ratio of these three forces
+        float[] ratio = new float[] {5.0f, 1.0f, 1.0f};  // store the ratio of these three forces
 
 
         foreach (SwarmFish other in fishSchool)
@@ -195,28 +195,29 @@ public class SwarmFish
         desired.Normalize();
         desired *= speed;
         Vector3 steer = desired - vel;
-        steer = Vector3.ClampMagnitude(steer, maxForce*3);
+        steer = Vector3.ClampMagnitude(steer, maxForce);
         return steer;
     }
     Vector3 Seek(Vector3 target)
     {
-        Vector3 desired = target - pos;
+        //-------Seeking a Position (Target) using a maxSpeed--------
 
-        desired.Normalize();
-        desired *= maxSpeed;
-        Vector3 steer = desired - vel;
-        steer = Vector3.ClampMagnitude(steer, maxForce);
+        Vector3 desired = target - pos;                     // Desired Direction
+        desired.Normalize();                                // Desired Direction in Unit Vector (Magnitude = 1.0f)
+        desired *= maxSpeed;                                // Desired Velocity in Desired Direction at Maximum Speed
+        Vector3 steer = desired - vel;                      // Steer Force needed for transforming the Current Velocity into Desired Velovity
+        steer = Vector3.ClampMagnitude(steer, maxForce);    // Limit Steer Force  
         return steer;
     }
     Vector3 SeekLimited(Vector3 target, float limitedSpeed)
     {
-        // seeking using a customized maxspeed
+        //-------Seeking a Position (Target) using a customized speed--------
 
-        Vector3 desired = target - pos;
-        desired.Normalize();
-        desired *= limitedSpeed;
-        Vector3 steer = desired - vel;
-        steer = Vector3.ClampMagnitude(steer, maxForce);
+        Vector3 desired = target - pos;                     // Desired Direction
+        desired.Normalize();                                // Desired Direction in Unit Vector (Magnitude = 1.0f)
+        desired *= limitedSpeed;                            // Desired Velocity in Desired Direction at Maximum Speed
+        Vector3 steer = desired - vel;                      // Steer Force needed for transforming the Current Velocity into Desired Velovity
+        steer = Vector3.ClampMagnitude(steer, maxForce);    // Limit Steer Force 
         return steer;
     }
     Vector3 ArrivingAt(Vector3 target, float slowDownRange)

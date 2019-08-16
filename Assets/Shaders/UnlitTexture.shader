@@ -3,6 +3,7 @@
 
 	Properties{
 		_MainTex("Base (RGB)", 2D) = "white" {}
+		_BrightnessColor("BrightnessColor", Color) = (0.0,0.0,0.0,1.0)
 	}
 
 		SubShader{
@@ -34,6 +35,7 @@
 
 					sampler2D _MainTex;
 					float4 _MainTex_ST;
+					fixed4 _BrightnessColor;
 
 					v2f vert(appdata_t v)
 					{
@@ -49,6 +51,7 @@
 					fixed4 frag(v2f i) : SV_Target
 					{
 						fixed4 col = tex2D(_MainTex, i.texcoord);
+					    col = col + _BrightnessColor;
 						UNITY_APPLY_FOG(i.fogCoord, col);
 						UNITY_OPAQUE_ALPHA(col.a);
 						return col;
