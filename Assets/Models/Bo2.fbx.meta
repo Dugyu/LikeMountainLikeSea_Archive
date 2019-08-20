@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: dd2411ce24d0c8f43b76d68397f0dcbd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BoSDS
+    100004: LeftWing_10
+    100006: LeftWing_11
+    100008: LeftWing_12
+    100010: LeftWing_13
+    100012: LeftWing_3
+    100014: LeftWing_4
+    100016: LeftWing_5
+    100018: LeftWing_6
+    100020: LeftWing_7
+    100022: LeftWing_8
+    100024: LeftWing_9
+    100026: RightWing_10
+    100028: RightWing_11
+    100030: RightWing_12
+    100032: RightWing_13
+    100034: RightWing_3
+    100036: RightWing_4
+    100038: RightWing_5
+    100040: RightWing_6
+    100042: RightWing_7
+    100044: RightWing_8
+    100046: RightWing_9
+    100048: Root
+    100050: Spine_1
+    100052: Spine_10
+    100054: Spine_11
+    100056: Spine_12
+    100058: Spine_13
+    100060: Spine_14
+    100062: Spine_15
+    100064: Spine_2
+    100066: Spine_3
+    100068: Spine_4
+    100070: Spine_5
+    100072: Spine_6
+    100074: Spine_7
+    100076: Spine_8
+    100078: Spine_9
+    400000: //RootNode
+    400002: BoSDS
+    400004: LeftWing_10
+    400006: LeftWing_11
+    400008: LeftWing_12
+    400010: LeftWing_13
+    400012: LeftWing_3
+    400014: LeftWing_4
+    400016: LeftWing_5
+    400018: LeftWing_6
+    400020: LeftWing_7
+    400022: LeftWing_8
+    400024: LeftWing_9
+    400026: RightWing_10
+    400028: RightWing_11
+    400030: RightWing_12
+    400032: RightWing_13
+    400034: RightWing_3
+    400036: RightWing_4
+    400038: RightWing_5
+    400040: RightWing_6
+    400042: RightWing_7
+    400044: RightWing_8
+    400046: RightWing_9
+    400048: Root
+    400050: Spine_1
+    400052: Spine_10
+    400054: Spine_11
+    400056: Spine_12
+    400058: Spine_13
+    400060: Spine_14
+    400062: Spine_15
+    400064: Spine_2
+    400066: Spine_3
+    400068: Spine_4
+    400070: Spine_5
+    400072: Spine_6
+    400074: Spine_7
+    400076: Spine_8
+    400078: Spine_9
+    2100000: Body
+    4300000: BoSDS
+    7400000: Bo2
+    9500000: //RootNode
+    13700000: BoSDS
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 161e18753d3b8d946b34b0c4553ae097, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bo2
+      takeName: CINEMA_4D_Main
+      firstFrame: 0
+      lastFrame: 280
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
