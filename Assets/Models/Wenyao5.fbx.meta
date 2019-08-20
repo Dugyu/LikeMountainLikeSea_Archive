@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 35cf19504d9a5d24db702f2b03c6fef6
+guid: 0fdf382a5683fbb44836233c57d5af81
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -59,18 +59,18 @@ ModelImporter:
     100106: LeftWing_9
     100108: Neck_2
     100110: Neck_3
-    100112: RightWing_10
-    100114: RightWing_11
-    100116: RightWing_12
-    100118: RightWing_2
-    100120: RightWing_3
-    100122: RightWing_4
-    100124: RightWing_5
-    100126: RightWing_6
-    100128: RightWing_7
-    100130: RightWing_8
-    100132: RightWing_9
-    100134: Root
+    100112: NewRoot2
+    100114: RightWing_10
+    100116: RightWing_11
+    100118: RightWing_12
+    100120: RightWing_2
+    100122: RightWing_3
+    100124: RightWing_4
+    100126: RightWing_5
+    100128: RightWing_6
+    100130: RightWing_7
+    100132: RightWing_8
+    100134: RightWing_9
     100136: Spine_1
     100138: Spine_2
     100140: Spine_3
@@ -152,18 +152,18 @@ ModelImporter:
     400106: LeftWing_9
     400108: Neck_2
     400110: Neck_3
-    400112: RightWing_10
-    400114: RightWing_11
-    400116: RightWing_12
-    400118: RightWing_2
-    400120: RightWing_3
-    400122: RightWing_4
-    400124: RightWing_5
-    400126: RightWing_6
-    400128: RightWing_7
-    400130: RightWing_8
-    400132: RightWing_9
-    400134: Root
+    400112: NewRoot2
+    400114: RightWing_10
+    400116: RightWing_11
+    400118: RightWing_12
+    400120: RightWing_2
+    400122: RightWing_3
+    400124: RightWing_4
+    400126: RightWing_5
+    400128: RightWing_6
+    400130: RightWing_7
+    400132: RightWing_8
+    400134: RightWing_9
     400136: Spine_1
     400138: Spine_2
     400140: Spine_3
@@ -191,7 +191,7 @@ ModelImporter:
     400184: //RootNode
     2100000: Mat
     4300000: Wenyao
-    7400000: Wenyao3
+    7400000: wenyao5
     9500000: //RootNode
     13700000: Wenyao
   externalObjects:
@@ -228,10 +228,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wenyao3
+      name: wenyao5
       takeName: CINEMA_4D_Main
-      firstFrame: 75
-      lastFrame: 101
+      firstFrame: 0
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -302,7 +302,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: Root
+    rootMotionBoneName: NewRoot2
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

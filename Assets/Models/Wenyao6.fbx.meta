@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f93c1337b67ac3c45bbe056f34aaaa76
+guid: 5a60429a8c98e384f812821d797cbc25
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -59,18 +59,18 @@ ModelImporter:
     100106: LeftWing_9
     100108: Neck_2
     100110: Neck_3
-    100112: NewRoot
-    100114: RightWing_10
-    100116: RightWing_11
-    100118: RightWing_12
-    100120: RightWing_2
-    100122: RightWing_3
-    100124: RightWing_4
-    100126: RightWing_5
-    100128: RightWing_6
-    100130: RightWing_7
-    100132: RightWing_8
-    100134: RightWing_9
+    100112: RightWing_10
+    100114: RightWing_11
+    100116: RightWing_12
+    100118: RightWing_2
+    100120: RightWing_3
+    100122: RightWing_4
+    100124: RightWing_5
+    100126: RightWing_6
+    100128: RightWing_7
+    100130: RightWing_8
+    100132: RightWing_9
+    100134: RootTrans
     100136: Spine_1
     100138: Spine_2
     100140: Spine_3
@@ -152,18 +152,18 @@ ModelImporter:
     400106: LeftWing_9
     400108: Neck_2
     400110: Neck_3
-    400112: NewRoot
-    400114: RightWing_10
-    400116: RightWing_11
-    400118: RightWing_12
-    400120: RightWing_2
-    400122: RightWing_3
-    400124: RightWing_4
-    400126: RightWing_5
-    400128: RightWing_6
-    400130: RightWing_7
-    400132: RightWing_8
-    400134: RightWing_9
+    400112: RightWing_10
+    400114: RightWing_11
+    400116: RightWing_12
+    400118: RightWing_2
+    400120: RightWing_3
+    400122: RightWing_4
+    400124: RightWing_5
+    400126: RightWing_6
+    400128: RightWing_7
+    400130: RightWing_8
+    400132: RightWing_9
+    400134: RootTrans
     400136: Spine_1
     400138: Spine_2
     400140: Spine_3
@@ -191,7 +191,9 @@ ModelImporter:
     400184: //RootNode
     2100000: Mat
     4300000: Wenyao
-    7400000: Wenyao2
+    7400000: wenyao_swim
+    7400002: wenyao_trans1
+    7400004: wenyao_sway
     9500000: //RootNode
     13700000: Wenyao
   externalObjects:
@@ -228,10 +230,66 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wenyao2
+      name: wenyao_swim
       takeName: CINEMA_4D_Main
-      firstFrame: 40
-      lastFrame: 120
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: wenyao_trans1
+      takeName: CINEMA_4D_Main
+      firstFrame: 101
+      lastFrame: 169
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: wenyao_sway
+      takeName: CINEMA_4D_Main
+      firstFrame: 170
+      lastFrame: 250
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -302,7 +360,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: NewRoot
+    rootMotionBoneName: RootTrans
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
