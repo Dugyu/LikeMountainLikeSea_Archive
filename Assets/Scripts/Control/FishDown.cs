@@ -12,7 +12,7 @@ public class FishDown : MonoBehaviour
 
     public GameObject rupiTemplate;
     private GameObject rupi;
-    Vector3 rupiOrigin = new Vector3(-1.99f, 0.78f, 1.4f);
+    Vector3 rupiOrigin; // = new Vector3(-1.99f, 0.78f, 1.4f);
 
     
     private void Awake()
@@ -24,7 +24,7 @@ public class FishDown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rupiOrigin = BannerManager.rupiOrigin;
     }
 
     // Update is called once per frame

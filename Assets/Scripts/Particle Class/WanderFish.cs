@@ -97,6 +97,12 @@ public class WanderFish
         Draw();
     }
 
+
+
+    //------------ State Indicator---------------------------------
+
+
+
     //------------ Draw Obj ------------------------------
     void Draw()
     {
@@ -104,6 +110,10 @@ public class WanderFish
         trans.LookAt(pos + vel, trans.up); 
 
     }
+
+
+
+
 
     //------------ Apply Forces --------------------------
     void ApplyForce()

@@ -16,8 +16,8 @@ public class HololensLotus : MonoBehaviour
 
     int lotusTimer;
     int lotusLoop;
-    Vector3 wenyaoBannerOrigin = new Vector3(1.6f,1.08f,0.93f);
-    Vector3 boBannerOrigin = new Vector3(1.2f,1.08f,1.58f);
+    Vector3 wenyaoBannerOrigin; // = new Vector3(1.6f,1.08f,0.93f);
+    Vector3 boBannerOrigin; //= new Vector3(1.2f,1.08f,1.58f);
 
     // Hand Interaction
     private GestureRecognizer recognizer;
@@ -30,11 +30,15 @@ public class HololensLotus : MonoBehaviour
     {
         LotusManager = EnvManager.Instance;
         bannerManager = BannerManager.Instance;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        boBannerOrigin = BannerManager.boOrigin;
+        wenyaoBannerOrigin = BannerManager.wenyaoOrigin;
+
         recognizer = new GestureRecognizer();
         recognizer.StartCapturingGestures();
         recognizer.SetRecognizableGestures(GestureSettings.ManipulationTranslate | GestureSettings.Tap);

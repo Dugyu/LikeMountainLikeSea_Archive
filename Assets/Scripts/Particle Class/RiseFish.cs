@@ -74,33 +74,16 @@ public class RiseFish
         Draw();
     }
 
-    void Draw()
-    {
-        trans.position = pos;
-    }
 
     //------------ State Indicator---------------------------------
 
     public bool IsOutRange(float uperLimit)
     {
-        if (pos.y > uperLimit )
+        if (pos.y > uperLimit)
         {
             return true;
         }
         return false;
-    }
-
-    //------------ Apply Forces --------------------------
-    void ApplyAllForces()
-    {
-        ApplyForceQueue(risingForceQueue);
-    }
-    void ApplyForceQueue(Queue<Vector3> forceQueue)
-    {
-        if (forceQueue.Count > 0)
-        {
-            acc += forceQueue.Dequeue();
-        }
     }
 
     //------------ High Level Behaviours ----------------------------
@@ -118,7 +101,25 @@ public class RiseFish
     }
 
 
+    //------------ Draw Obj ------------------------------
+    void Draw()
+    {
+        trans.position = pos;
+    }
 
+    //------------ Apply Forces --------------------------
+    void ApplyAllForces()
+    {
+        ApplyForceQueue(risingForceQueue);
+    }
+    void ApplyForceQueue(Queue<Vector3> forceQueue)
+    {
+        if (forceQueue.Count > 0)
+        {
+            acc += forceQueue.Dequeue();
+        }
+    }
+    
     //------------ Low Level Behaviours -----------------------------
 
     Vector3 Seek(Vector3 target)

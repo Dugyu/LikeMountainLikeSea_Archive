@@ -11,7 +11,7 @@ public class FishApproach : MonoBehaviour
 
     public GameObject xixiTemplate;
     public GameObject cam;
-    Vector3 xixiOrigin = new Vector3(-1.37f,0,1.75f);
+    Vector3 xixiOrigin; //= new Vector3(-1.37f,0,1.75f);
 
     SensitiveFish xixi;
     List<SensitiveFish> xixiShoal = new List<SensitiveFish>();
@@ -26,6 +26,7 @@ public class FishApproach : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        xixiOrigin = BannerManager.xixiOrigin;
         SensitiveFish.AddEnemy(cam);
 
 

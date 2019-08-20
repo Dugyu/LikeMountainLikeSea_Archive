@@ -10,32 +10,32 @@ public class FishWander : MonoBehaviour
 
 
     //Manager
-    int timer;
-    int loop;
-
     private BannerManager bannerManager;
 
     int heluoTimer;
     int heluoLoop;
     int gegeTimer;
     int gegeLoop;
-
+    int wenyaoTimer;
+    int wenyaoLoop;
 
     // Store temporary and long-term Fish Objects
     WanderFish gege;
     WanderFish heluo;
+    WanderFish wenyao;
+    WanderFish bo;
     List<WanderFish> gegeShoal = new List<WanderFish>();
     List<WanderFish> heluoShoal = new List<WanderFish>();
-
-
+    List<WanderFish> wenyaoShoal = new List<WanderFish>();
+    List<WanderFish> boShoal = new List<WanderFish>();
     // Fish Instantiate Templates
-    public GameObject gegeTemplate;
+    public GameObject gegeTemplate; 
     public GameObject heluoTemplate;
+    public GameObject wenyaoTemplate;
+    public GameObject boTemplate;
 
-
-    Vector3 gegeOrigin = new Vector3(0.47f, 0.5f, 2.52f);
-    Vector3 heluoOrigin = new Vector3(-0.42f,0.5f, 2.17f);
-
+    Vector3 gegeOrigin; //= new Vector3(0.47f, 0.5f, 2.52f);
+    Vector3 heluoOrigin; //= new Vector3(-0.42f,0.5f, 2.17f);
 
     private void Awake()
     {
@@ -47,6 +47,10 @@ public class FishWander : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gegeOrigin = BannerManager.gegeOrigin;
+        heluoOrigin = BannerManager.heluoOrigin;
+
+
 
 
         // GEGE
@@ -102,7 +106,6 @@ public class FishWander : MonoBehaviour
             fish.Move();
         }
 
-        timer++;
 
     }
 
@@ -131,7 +134,7 @@ public class FishWander : MonoBehaviour
 
     void HeluoUpdate()
     {
-        if (timer % 64 == 0 && heluoLoop < 20)
+        if (heluoTimer % 64 == 0 && heluoLoop < 20)
         {
             heluo = new WanderFish(heluoTemplate);
 
