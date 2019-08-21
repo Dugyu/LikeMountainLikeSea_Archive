@@ -36,8 +36,8 @@ public class HololensLotus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boBannerOrigin = BannerManager.boOrigin;
-        wenyaoBannerOrigin = BannerManager.wenyaoOrigin;
+        boBannerOrigin = BannerManager.boOrigin +new Vector3(0, 0.8f, 0);
+        wenyaoBannerOrigin = BannerManager.wenyaoOrigin + new Vector3(0, 0.8f,0);
 
         recognizer = new GestureRecognizer();
         recognizer.StartCapturingGestures();

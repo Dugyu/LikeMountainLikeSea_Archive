@@ -180,6 +180,8 @@ public class WanderFish
         }
     }
 
+    
+
     //------------ Low Level Behaviours -----------------------------
     Vector3 Seek(Vector3 target)
     {
