@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: b688a65aab27ef849a3f1488a6f39fd4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Banner
+    100002: //RootNode
+    100004: Cylinder
+    100006: Cylinder_2
+    100008: Joint
+    100010: Joint_1
+    100012: Joint_10
+    100014: Joint_11
+    100016: Joint_12
+    100018: Joint_13
+    100020: Joint_14
+    100022: Joint_15
+    100024: Joint_16
+    100026: Joint_17
+    100028: Joint_18
+    100030: Joint_19
+    100032: Joint_2
+    100034: Joint_20
+    100036: Joint_3
+    100038: Joint_4
+    100040: Joint_5
+    100042: Joint_6
+    100044: Joint_7
+    100046: Joint_8
+    100048: Joint_9
+    100050: Root
+    100052: scroll
+    100054: scroll_2
+    100056: Scrollroot
+    400000: Banner
+    400002: //RootNode
+    400004: Cylinder
+    400006: Cylinder_2
+    400008: Joint
+    400010: Joint_1
+    400012: Joint_10
+    400014: Joint_11
+    400016: Joint_12
+    400018: Joint_13
+    400020: Joint_14
+    400022: Joint_15
+    400024: Joint_16
+    400026: Joint_17
+    400028: Joint_18
+    400030: Joint_19
+    400032: Joint_2
+    400034: Joint_20
+    400036: Joint_3
+    400038: Joint_4
+    400040: Joint_5
+    400042: Joint_6
+    400044: Joint_7
+    400046: Joint_8
+    400048: Joint_9
+    400050: Root
+    400052: scroll
+    400054: scroll_2
+    400056: Scrollroot
+    2100000: Banner
+    2100002: Mat
+    2100004: string
+    2300000: Cylinder
+    2300002: Cylinder_2
+    2300004: scroll
+    2300006: scroll_2
+    3300000: Cylinder
+    3300002: Cylinder_2
+    3300004: scroll
+    3300006: scroll_2
+    4300000: Banner
+    4300002: scroll
+    4300004: Cylinder
+    4300006: Cylinder_2
+    4300008: scroll_2
+    7400000: BannerScroll
+    9500000: //RootNode
+    13700000: Banner
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banner
+    second: {fileID: 2100000, guid: ba6c6ef7d36d1ad48b7b4614e0e9e284, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: ef5cf18f3d06c5540b9cb292ee9d41a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: string
+    second: {fileID: 2100000, guid: a7df163a6f8c9914fa7fd4dbb638b1d1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BannerScroll
+      takeName: CINEMA_4D_Main
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
