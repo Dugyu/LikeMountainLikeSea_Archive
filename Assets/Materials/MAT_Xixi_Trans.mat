@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Xixi
+  m_Name: MAT_Xixi_Trans
   m_Shader: {fileID: 4800000, guid: 771edb58351a44c4db23ee8f1dc03130, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -75,4 +75,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _rimColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    - _rimColor: {r: 1, g: 1, b: 1, a: 0.34901962}

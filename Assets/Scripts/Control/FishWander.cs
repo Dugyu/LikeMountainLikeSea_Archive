@@ -22,6 +22,8 @@ public class FishWander : MonoBehaviour
     int boLoop;
     int xixiTimer;
     int xixiLoop;
+    int rupiTimer;
+    int rupiLoop;
 
     // Store temporary and long-term Fish Objects
     WanderFish gege;
@@ -29,12 +31,15 @@ public class FishWander : MonoBehaviour
     WanderFish wenyao;
     WanderFish bo;
     WanderFish xixi;
+    WanderFish rupi;
+
 
     List<WanderFish> gegeShoal = new List<WanderFish>();
     List<WanderFish> heluoShoal = new List<WanderFish>();
     List<WanderFish> wenyaoShoal = new List<WanderFish>();
     List<WanderFish> boShoal = new List<WanderFish>();
     List<WanderFish> xixiShoal = new List<WanderFish>();
+    List<WanderFish> rupiShoal = new List<WanderFish>();
 
     // Fish Instantiate Templates
     public GameObject gegeTemplate; 
@@ -43,13 +48,14 @@ public class FishWander : MonoBehaviour
     public GameObject wenyaoTemplate_sway;
     public GameObject boTemplate;
     public GameObject xixiTemplate;
+    public GameObject rupiTemplate;
 
     Vector3 gegeOrigin; 
     Vector3 heluoOrigin;
     Vector3 wenyaoOrigin;
     Vector3 boOrigin;
     Vector3 xixiOrigin;
-
+    Vector3 rupiOrigin;
 
 
     private void Awake()
@@ -67,6 +73,7 @@ public class FishWander : MonoBehaviour
         wenyaoOrigin = BannerManager.wenyaoOrigin;
         boOrigin = BannerManager.boOrigin;
         xixiOrigin = BannerManager.xixiOrigin;
+        rupiOrigin = BannerManager.rupiOrigin;
 
         // GEGE
         for (int i = 0; i < 1; i++)
@@ -115,6 +122,9 @@ public class FishWander : MonoBehaviour
                 case "xixi":
                     XixiUpdate();
                     break;
+                case "rupi":
+                    RupiUpdate();
+                    break;
                 default:
                     break;
             }
@@ -149,6 +159,12 @@ public class FishWander : MonoBehaviour
             fish.Move();
         }
         foreach (WanderFish fish in xixiShoal)
+        {
+            fish.Wander();
+            fish.Boundary();
+            fish.Move();
+        }
+        foreach (WanderFish fish in rupiShoal)
         {
             fish.Wander();
             fish.Boundary();
@@ -254,5 +270,20 @@ public class FishWander : MonoBehaviour
         xixiTimer++;
     }
 
-
+    void RupiUpdate()
+    {
+        if (rupiTimer % 128 == 0 && rupiLoop < 10)
+        {
+            rupi = new WanderFish(rupiTemplate);
+            rupi.pos = Random.insideUnitSphere * 0.5f + rupiOrigin;
+            rupi.SetWander(0.2f, 2.0f, 0.0f, 0.3f);
+            rupiShoal.Add(rupi);
+            rupiLoop++;
+        }
+        if (rupiTimer == 130)
+        {
+            rupiTimer = 0;
+        }
+        rupiTimer++;
+    }
 }

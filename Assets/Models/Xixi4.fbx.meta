@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd0a5343249aa254287f2771f4398571
+guid: 5000e585927458c4f8057133406e92cd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -132,7 +132,7 @@ ModelImporter:
     100252: TailTop_8
     100254: TailTop_9
     100256: //RootNode
-    100258: XixiHiPoly
+    100258: XixiSDS
     400000: Body_1
     400002: Body_2
     400004: Body_3
@@ -262,13 +262,26 @@ ModelImporter:
     400252: TailTop_8
     400254: TailTop_9
     400256: //RootNode
-    400258: XixiHiPoly
-    2100000: Mat.2
-    4300000: XixiHiPoly
-    7400000: CINEMA_4D_Main
+    400258: XixiSDS
+    2100000: Body
+    2100002: Wing
+    4300000: XixiSDS
+    7400000: Xixi_Transition1
+    7400002: xixi_swim
+    7400004: Xixi_Transition2
     9500000: //RootNode
-    13700000: XixiHiPoly
-  externalObjects: {}
+    13700000: XixiSDS
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: ac6f605145cf48b4f9639bba9a845a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wing
+    second: {fileID: 2100000, guid: 5ba71dd58c486814b8f1474fce0341c9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -295,7 +308,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: xixi_swim
+      takeName: CINEMA_4D_Main
+      firstFrame: 150
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -343,7 +384,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
