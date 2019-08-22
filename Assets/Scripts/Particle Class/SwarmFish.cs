@@ -8,7 +8,6 @@ public class SwarmFish
 
     // ------------ Swarm Fish ------------------------
     // Swarm Swarm Swarm
-
     public int id;
     public GameObject obj;
     public Transform trans;
@@ -88,17 +87,27 @@ public class SwarmFish
     void Draw()
     {
         trans.position = pos;
-
-        if (trans.forward == Vector3.up)
+        // turn around smoothly
+        if (Vector3.Dot(trans.forward, vel) >= 0 )
         {
-            trans.LookAt(pos + vel, Vector3.forward);
+            trans.LookAt(pos + vel, trans.up);
         }
         else
         {
-            trans.LookAt(pos + vel);
+            Vector3 originalDirection = trans.forward.normalized;
+            Vector3 newDirection = vel.normalized;
+            if(originalDirection + newDirection == Vector3.zero)
+            {
+                trans.LookAt(pos + trans.right, trans.up);
+            }
+            else
+            {
+                Vector3 direction = newDirection + originalDirection;
+                trans.LookAt(pos + direction, trans.up);
+            }
         }
-    }
 
+    }
     //------------ Apply Forces --------------------------
     void ApplyAllForces()
     {

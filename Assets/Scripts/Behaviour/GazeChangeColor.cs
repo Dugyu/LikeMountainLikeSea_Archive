@@ -72,8 +72,6 @@ public class GazeChangeColor : MonoBehaviour
 
     }
 
-
-
     void RayCastBannerMouse()
     {
 
@@ -125,10 +123,6 @@ public class GazeChangeColor : MonoBehaviour
                 break;
         }
     }
-
-
-
-
 
     void RayCastBanner()
     {

@@ -108,12 +108,7 @@ public class WanderFish
     {
         trans.position = pos;
         trans.LookAt(pos + vel, trans.up); 
-
     }
-
-
-
-
 
     //------------ Apply Forces --------------------------
     void ApplyForce()

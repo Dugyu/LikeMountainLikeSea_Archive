@@ -249,7 +249,7 @@ ModelImporter:
       name: Heluo_Swim
       takeName: CINEMA_4D_Main
       firstFrame: 0
-      lastFrame: 140
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -276,7 +276,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Heluo_Transition1
       takeName: CINEMA_4D_Main
-      firstFrame: 141
+      firstFrame: 131
       lastFrame: 199
       wrapMode: 0
       orientationOffsetY: 0

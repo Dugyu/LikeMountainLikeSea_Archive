@@ -42,13 +42,23 @@ public class FishWander : MonoBehaviour
     List<WanderFish> rupiShoal = new List<WanderFish>();
 
     // Fish Instantiate Templates
-    public GameObject gegeTemplate; 
-    public GameObject heluoTemplate;
+    public GameObject gegeTemplate;
+    
+    public GameObject heluoTemplate_all;
+    public GameObject heluoTemplate_swim;
+    public GameObject heluoTemplate_sway;
+
     public GameObject wenyaoTemplate_swim;
     public GameObject wenyaoTemplate_sway;
-    public GameObject boTemplate;
+
+    public GameObject boTemplate_all;
+    public GameObject boTemplate_swim;
+    public GameObject boTemplate_sway;
+
     public GameObject xixiTemplate;
-    public GameObject rupiTemplate;
+
+    public GameObject rupiTemplate_all;
+    public GameObject rupiTemplate_sway;
 
     Vector3 gegeOrigin; 
     Vector3 heluoOrigin;
@@ -62,8 +72,6 @@ public class FishWander : MonoBehaviour
     {
         bannerManager = BannerManager.Instance;
     }
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -87,14 +95,11 @@ public class FishWander : MonoBehaviour
         // Heluo
         for (int i = 0; i < 1; i++)
         {
-            heluo = new WanderFish(heluoTemplate);
+            heluo = new WanderFish(heluoTemplate_all);
             heluo.pos = Random.insideUnitSphere + heluoOrigin;
             heluo.SetWander(0.2f,2.0f, 0.0f, 0.3f);
             heluoShoal.Add(heluo);
         }
-
-
-
       
     }
 
@@ -172,7 +177,6 @@ public class FishWander : MonoBehaviour
         }
     }
 
-
     void GegeUpdate()
     {
         if (gegeTimer % 32 == 0 && gegeLoop < 40)
@@ -195,7 +199,19 @@ public class FishWander : MonoBehaviour
     {
         if (heluoTimer % 64 == 0 && heluoLoop < 20)
         {
-            heluo = new WanderFish(heluoTemplate);
+            int heluoType = Random.Range(0, 3);   // randomly select one from three different heluo templates
+            switch (heluoType)
+            {
+                case 1:
+                    heluo = new WanderFish(heluoTemplate_swim);
+                    break;
+                case 2:
+                    heluo = new WanderFish(heluoTemplate_sway);
+                    break;
+                default:
+                    heluo = new WanderFish(heluoTemplate_all);
+                    break;
+            }
             heluo.pos = Random.insideUnitSphere * 0.5f + heluoOrigin;
             heluo.SetWander(0.2f, 2.0f, 0.0f, 0.3f);
             heluoShoal.Add(heluo);
@@ -210,23 +226,23 @@ public class FishWander : MonoBehaviour
 
     void WenyaoUpdate()
     {
-        if (wenyaoTimer % 128 == 0 && wenyaoLoop < 30)
+        if (wenyaoTimer % 64 == 0 && wenyaoLoop < 30)
         {
-            wenyao = new WanderFish(wenyaoTemplate_sway);
+            int wenyaoType = Random.Range(0, 2);
+            switch (wenyaoType)
+            {
+                case 1:
+                    wenyao = new WanderFish(wenyaoTemplate_swim);
+                    break;
+                default:
+                    wenyao = new WanderFish(wenyaoTemplate_sway);
+                    break;
+            }
             wenyao.pos = Random.insideUnitSphere * 0.5f + wenyaoOrigin;
             wenyao.SetWander(0.2f, 2.0f, 0.0f, 0.3f);
             wenyaoShoal.Add(wenyao);
             wenyaoLoop++;
         }
-        else if (wenyaoTimer % 64 == 0 && wenyaoLoop < 30)
-        {
-            wenyao = new WanderFish(wenyaoTemplate_swim);
-            wenyao.pos = Random.insideUnitSphere * 0.5f + wenyaoOrigin;
-            wenyao.SetWander(0.2f, 2.0f, 0.0f, 0.3f);
-            wenyaoShoal.Add(wenyao);
-            wenyaoLoop++;
-        }
-        
         if (wenyaoTimer == 130)
         {
             wenyaoTimer = 0;
@@ -236,22 +252,33 @@ public class FishWander : MonoBehaviour
 
     void BoUpdate()
     {
-        if (boTimer % 32 == 0 && boLoop < 40)
+        if (boTimer % 64 == 0 && boLoop < 40)
         {
-            bo = new WanderFish(boTemplate);
+            int boType = Random.Range(0, 3);
+            switch (boType)
+            {
+                case 1:
+                    bo = new WanderFish(boTemplate_swim);
+                    break;
+                case 2:
+                    bo = new WanderFish(boTemplate_sway);
+                    break;
+                default:
+                    bo = new WanderFish(boTemplate_all);
+                    break;
+            }
             bo.pos = Random.insideUnitSphere + boOrigin;
             bo.SetWander(1.0f, 4.0f, 0.0f, 0.2f);
             bo.SetMaxSpeed(0.1f, 0.0005f);
             boShoal.Add(bo);
             boLoop++;
         }
-        if (boTimer == 120)
+        if (boTimer == 130)
         {
             boTimer = 0;
         }
         boTimer++;
     }
-
 
     void XixiUpdate()
     {
@@ -272,9 +299,19 @@ public class FishWander : MonoBehaviour
 
     void RupiUpdate()
     {
-        if (rupiTimer % 128 == 0 && rupiLoop < 10)
+        if (rupiTimer % 128 == 0 && rupiLoop < 20)
         {
-            rupi = new WanderFish(rupiTemplate);
+            int rupiType = Random.Range(0, 2);
+
+            switch (rupiType)
+            {
+                case 1:
+                    rupi = new WanderFish(rupiTemplate_sway);
+                    break;
+                default:
+                    rupi = new WanderFish(rupiTemplate_all);
+                    break;
+            }
             rupi.pos = Random.insideUnitSphere * 0.5f + rupiOrigin;
             rupi.SetWander(0.2f, 2.0f, 0.0f, 0.3f);
             rupiShoal.Add(rupi);
