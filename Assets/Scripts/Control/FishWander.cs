@@ -140,6 +140,7 @@ public class FishWander : MonoBehaviour
         {
             fish.Wander();
             fish.Boundary();
+            fish.Centric();
             fish.Move();
         }
 
@@ -147,6 +148,7 @@ public class FishWander : MonoBehaviour
         {
             fish.Wander();
             fish.Boundary();
+            fish.Centric();
             fish.Move();
         }
 
@@ -154,6 +156,7 @@ public class FishWander : MonoBehaviour
         {
             fish.Wander();
             fish.Boundary();
+            fish.Centric();
             fish.Move();
         }
 
@@ -161,18 +164,21 @@ public class FishWander : MonoBehaviour
         {
             fish.Wander();
             fish.Boundary();
+            fish.Centric();
             fish.Move();
         }
         foreach (WanderFish fish in xixiShoal)
         {
             fish.Wander();
             fish.Boundary();
+            fish.Centric();
             fish.Move();
         }
         foreach (WanderFish fish in rupiShoal)
         {
             fish.Wander();
             fish.Boundary();
+            fish.Centric();
             fish.Move();
         }
     }

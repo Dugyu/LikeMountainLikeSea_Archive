@@ -26,7 +26,7 @@ public class WanderFish
     public Queue<Vector3> wanderForceQueue = new Queue<Vector3>();
     public Queue<Vector3> boundaryForceQueue = new Queue<Vector3>();
     public Queue<Vector3> wanderUpDownForceQueue = new Queue<Vector3>();
-
+    public Queue<Vector3> centricForceQueue = new Queue<Vector3>();
 
     public static List<GameObject> playersList = new List<GameObject>();
 
@@ -88,12 +88,12 @@ public class WanderFish
 
     public void Move()
     {
-        ApplyForce();
+        ApplyForces();
         vel += acc * 0.5f;
         vel *= 0.95f;
         pos += vel;        
         acc = Vector3.zero;           // acceleration is instant
-        Boundary();
+        //Boundary();
         Draw();
     }
 
@@ -111,7 +111,7 @@ public class WanderFish
     }
 
     //------------ Apply Forces --------------------------
-    void ApplyForce()
+    void ApplyForces()
     {
         if (wanderForceQueue.Count > 0)
         {
@@ -126,6 +126,11 @@ public class WanderFish
         if (boundaryForceQueue.Count > 0)
         {
             Vector3 force = boundaryForceQueue.Dequeue();
+            acc += force;
+        }
+        if (centricForceQueue.Count > 0)
+        {
+            Vector3 force = centricForceQueue.Dequeue();
             acc += force;
         }
     }
@@ -168,13 +173,22 @@ public class WanderFish
 
 
             // for smooth behaviour, let the force have longer effect
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 boundaryForceQueue.Enqueue(Seek(target));
             }
         }
     }
 
+    public void Centric()
+    {
+        
+        float sqrMaxCenterDist = 25.0f;
+        if (pos.sqrMagnitude > sqrMaxCenterDist)
+        {
+            centricForceQueue.Enqueue(ArrivingAt(Vector3.zero, 2.0f));
+        }
+    }
     
 
     //------------ Low Level Behaviours -----------------------------

@@ -37,7 +37,7 @@ public class LotusDropNew : MonoBehaviour
 
 
 
-        if(timer % 16 == 0 && selectedLotus.Count > 0)
+        if(timer % 64 == 0 && selectedLotus.Count > 0)
         {
             foreach(int index in selectedLotus)
             {
@@ -69,7 +69,7 @@ public class LotusDropNew : MonoBehaviour
         }
 
 
-        if (timer == 120)
+        if (timer == 130)
         {
             timer = 0;
             selectedLotus = RandomSelect(Enumerable.Range(0, localLotusList.Count).ToList(), 0.3f, 5);
