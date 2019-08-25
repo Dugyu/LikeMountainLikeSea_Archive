@@ -11,7 +11,7 @@ public class BannerManager : MonoBehaviour
     public static Vector3 boOrigin = new Vector3(1.2f, 0.28f, 1.58f);
     public static Vector3 wenyaoOrigin = new Vector3(1.6f, 0.28f, 0.93f);
 
-
+    
 
     private static BannerManager _instance;
     public static BannerManager Instance

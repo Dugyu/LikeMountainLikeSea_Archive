@@ -8,8 +8,10 @@ public class GazeChangeColor : MonoBehaviour
     public Transform camTrans;
     public bool useMouse;
 
-    Color _lerpColor = new Color(0.8f, 0.25f, 0, 0.5f);
-    Color _originalColor = new Color(0.73f, 0.73f, 0.73f, 0.4f);
+    //Color _lerpColor = new Color(0.8f, 0.25f, 0, 0.5f);
+    Color _lerpColor = new Color(1,0.6f,0.6f,1);
+    //Color _originalColor = new Color(0.73f, 0.73f, 0.73f, 0.4f);
+    Color _originalColor = new Color(1, 1, 1, 1);
     public float _fadeSpeed;
 
     int layerMask = 1 << 31;
@@ -39,6 +41,7 @@ public class GazeChangeColor : MonoBehaviour
     {
         _colorID = Shader.PropertyToID("_color");
         InteractionManager.InteractionSourceLost += InteractionManager_InteractionSourceLost;
+        
 
     }
 
