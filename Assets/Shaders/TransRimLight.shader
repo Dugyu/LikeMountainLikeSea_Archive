@@ -52,7 +52,6 @@ Subshader {
 			v2f vert(vertData v)
 			{
 				v2f o;
- 				
 				UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 				

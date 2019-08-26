@@ -93,7 +93,6 @@ public class WanderFish
         vel *= 0.95f;
         pos += vel;        
         acc = Vector3.zero;           // acceleration is instant
-        //Boundary();
         Draw();
     }
 
@@ -153,11 +152,8 @@ public class WanderFish
         Vector3 targetUpDown = pos + vz * wanderCircleDistance + circleUpDownPt * wanderCircleRadius;
 
 
-
-        wanderUpDownForceQueue.Enqueue(Seek(targetUpDown)*0.1f);
-
-
         wanderForceQueue.Enqueue(Seek(target));
+        wanderUpDownForceQueue.Enqueue(Seek(targetUpDown)*0.1f);
     }
 
     public void Boundary()

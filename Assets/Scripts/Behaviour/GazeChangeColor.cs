@@ -51,12 +51,15 @@ public class GazeChangeColor : MonoBehaviour
         {
             case 1:
                 state = -1;
+                bannerManager.setInBanner(false);
                 break;
             case -1:
                 state = -1;
+                bannerManager.setInBanner(false);
                 break;
             default:
                 state = 0;
+                bannerManager.setInBanner(false);
                 break;
         }
     }
@@ -110,7 +113,6 @@ public class GazeChangeColor : MonoBehaviour
                     _meshRenderer = hit.transform.gameObject.GetComponent<SkinnedMeshRenderer>();
                     state = 1;
                     bannerManager.setCurrentBanner(hit.transform.tag);
-
                     bannerManager.setInBanner(true);
 
                 }
