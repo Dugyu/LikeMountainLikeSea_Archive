@@ -11,6 +11,7 @@ public class FishWander : MonoBehaviour
 
     //Manager
     private BannerManager bannerManager;
+    
 
     int heluoTimer;
     int heluoLoop;

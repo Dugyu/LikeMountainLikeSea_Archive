@@ -4,13 +4,35 @@ using UnityEngine;
 
 public class MovementFlower : MonoBehaviour
 {
+    // Manager Class
+    private EnvManager CloverManager;
+
+
+
+
     public Transform camTrans;
+    public GameObject cloverTemplate;
+    public Transform cloverParent;
+
     Vector3 lastStablePosition;
     Vector3 currentStablePosition;
     float accumulativeDist;
-    public GameObject cloverTemplate;
-    GameObject clover;
-   
+    Clover clover;
+    int cloverCount;
+    int maxCloverCount = 30;
+
+    Vector3 height = new Vector3(0, -0.1f, 0);
+
+
+
+
+    private void Awake()
+    {
+        CloverManager = EnvManager.Instance;
+
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +49,17 @@ public class MovementFlower : MonoBehaviour
         accumulativeDist = CalcSqrDistance();
         if (accumulativeDist > 0.36f)
         {
-            clover = Instantiate(cloverTemplate, currentStablePosition, Quaternion.identity);
+            if (cloverCount < maxCloverCount)
+            {
+            clover = new Clover(cloverTemplate, currentStablePosition + height, cloverParent);
+            CloverManager.AddClover(clover);
+            }
+            else
+            {
+                int index = cloverCount - maxCloverCount;
+                CloverManager.MoveClover(index, currentStablePosition + height);
+            }
+            cloverCount += 1;
             lastStablePosition = currentStablePosition;
         }
     }

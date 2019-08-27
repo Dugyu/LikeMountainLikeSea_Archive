@@ -20,6 +20,7 @@ public class EnvManager: MonoBehaviour
     }
 
     private List<Lotus> lotusList= new List<Lotus>();
+    private List<Clover> cloverList = new List<Clover>();
 
     public List<Lotus> LotusList
     {
@@ -32,6 +33,17 @@ public class EnvManager: MonoBehaviour
         }
     }
 
+    public List<Clover> CloverList
+    {
+        get
+        {
+            lock (cloverList)
+            {
+                return new List<Clover>(cloverList);
+            }
+        }
+    }
+
     public void AddLotus(Lotus lotus)
     {
         lock (lotusList)
@@ -40,4 +52,17 @@ public class EnvManager: MonoBehaviour
         }
     }
     
+    public void AddClover(Clover clover)
+    {
+        lock (cloverList)
+        {
+            cloverList.Add(clover);
+        }
+    }
+
+    public void MoveClover(int index, Vector3 Position)
+    {
+        Clover clover = cloverList[index];
+        clover.Move(Position);
+    }
 }
