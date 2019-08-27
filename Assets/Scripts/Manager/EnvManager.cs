@@ -65,4 +65,23 @@ public class EnvManager: MonoBehaviour
         Clover clover = cloverList[index];
         clover.Move(Position);
     }
+
+    public Vector3 ReturnLastClover()
+    {
+        if (cloverList.Count > 0) { return cloverList[cloverList.Count - 1].pos; }
+        else
+        {
+            return Vector3.zero;
+        }
+        
+    }
+
+    public Vector3 ReturnLastLotus()
+    {
+        if (lotusList.Count > 0) { return cloverList[lotusList.Count - 1].pos; }
+        else
+        {
+            return Vector3.zero;
+        }
+    }
 }

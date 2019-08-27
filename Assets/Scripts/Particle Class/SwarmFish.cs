@@ -19,7 +19,7 @@ public class SwarmFish
     public float maxSpeed = 0.05f;
     public float maxForce = 0.0005f;
 
-    public Lotus lotusTarget;
+    public Vector3 lotusCloverTarget;
 
 
     public Queue<Vector3> wanderLotusForceQueue = new Queue<Vector3>();
@@ -196,7 +196,7 @@ public class SwarmFish
     }
     public void WanderThroughLotus()
     {
-        wanderLotusForceQueue.Enqueue(ArrivingAt(lotusTarget.pos, 0.5f) * 1.0f);
+        wanderLotusForceQueue.Enqueue(ArrivingAt(lotusCloverTarget, 0.5f) * 1.0f);
     }
     //------------ Low Level Behaviours -----------------------------
     Vector3 SeekVelocity(Vector3 desired, float speed)

@@ -15,7 +15,7 @@ public class LanternFloating : MonoBehaviour
     private List<Lantern> peachBlossomList = new List<Lantern>();
     int timer = 0;
     int peachBlossomTimer = 0;
-    int maxLanternCount = 20;
+    int maxLanternCount = 15;
     int maxPeachBlossomCount = 30;
     int peachBlossomCount = 0;
     int lanternCount = 0;

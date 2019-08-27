@@ -10,12 +10,12 @@ public class MouseLotus : MonoBehaviour
 
 
     // Manager Class
-    private EnvManager LotusManager;
+    private EnvManager lotusCloverManager;
 
 
     private void Awake()
     {
-        LotusManager = EnvManager.Instance;
+        lotusCloverManager = EnvManager.Instance;
     }
 
 
@@ -32,7 +32,7 @@ public class MouseLotus : MonoBehaviour
 
                 Lotus lotusInAir = new Lotus(lotusTemplate, PointInAir);
 
-                LotusManager.AddLotus(lotusInAir);
+                lotusCloverManager.AddLotus(lotusInAir);
             }
         }
 

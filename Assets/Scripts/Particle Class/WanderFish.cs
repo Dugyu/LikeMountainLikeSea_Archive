@@ -5,7 +5,7 @@ using UnityEngine;
 public class WanderFish
 {
     // ------------ Wander Fish : Move Freely ------------------------
- 
+
 
     public int id;
     public GameObject obj;
@@ -27,6 +27,7 @@ public class WanderFish
     public Queue<Vector3> boundaryForceQueue = new Queue<Vector3>();
     public Queue<Vector3> wanderUpDownForceQueue = new Queue<Vector3>();
     public Queue<Vector3> centricForceQueue = new Queue<Vector3>();
+    public Queue<Vector3> cloverForceQueue = new Queue<Vector3>();
 
     public static List<GameObject> playersList = new List<GameObject>();
 
@@ -103,11 +104,39 @@ public class WanderFish
 
 
     //------------ Draw Obj ------------------------------
+    //void Draw()
+    //{
+    //    trans.position = pos;
+    //    trans.LookAt(pos + vel, trans.up); 
+    //}
+
     void Draw()
     {
         trans.position = pos;
-        trans.LookAt(pos + vel, trans.up); 
+        // turn around smoothly
+        if (Vector3.Dot(trans.forward, vel) >= 0)
+        {
+            trans.LookAt(pos + vel, trans.up);
+        }
+        else
+        {
+            Vector3 originalDirection = trans.forward.normalized;
+            Vector3 newDirection = vel.normalized;
+            if (originalDirection + newDirection == Vector3.zero)
+            {
+                trans.LookAt(pos + trans.right, trans.up);
+            }
+            else
+            {
+                Vector3 direction = newDirection + originalDirection;
+                trans.LookAt(pos + direction, trans.up);
+            }
+        }
+
     }
+
+
+
 
     //------------ Apply Forces --------------------------
     void ApplyForces()
@@ -130,6 +159,11 @@ public class WanderFish
         if (centricForceQueue.Count > 0)
         {
             Vector3 force = centricForceQueue.Dequeue();
+            acc += force;
+        }
+        if (cloverForceQueue.Count > 0)
+        {
+            Vector3 force = cloverForceQueue.Dequeue();
             acc += force;
         }
     }
@@ -185,7 +219,12 @@ public class WanderFish
             centricForceQueue.Enqueue(ArrivingAt(Vector3.zero, 2.0f));
         }
     }
-    
+
+    public void TowardsClover(Vector3 target)
+    {
+        cloverForceQueue.Enqueue(ArrivingAt(target, 0.2f));
+    }
+
 
     //------------ Low Level Behaviours -----------------------------
     Vector3 Seek(Vector3 target)

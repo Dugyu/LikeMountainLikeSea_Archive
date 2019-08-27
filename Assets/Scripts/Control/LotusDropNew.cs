@@ -6,7 +6,7 @@ using UnityEngine;
 public class LotusDropNew : MonoBehaviour
 {
     // Manager  
-    private EnvManager LotusManager;
+    private EnvManager lotusCloverManager;
     int timer;
 
     //Object Lists
@@ -20,7 +20,7 @@ public class LotusDropNew : MonoBehaviour
 
     private void Awake()
     {
-        LotusManager = EnvManager.Instance;
+        lotusCloverManager = EnvManager.Instance;
 
     }
 
@@ -28,7 +28,7 @@ public class LotusDropNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        localLotusList = LotusManager.LotusList;
+        localLotusList = lotusCloverManager.LotusList;
         foreach (Lotus lotus in localLotusList)
         {
             lotus.FallOnMesh();

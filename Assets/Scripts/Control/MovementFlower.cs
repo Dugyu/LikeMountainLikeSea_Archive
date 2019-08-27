@@ -6,10 +6,6 @@ public class MovementFlower : MonoBehaviour
 {
     // Manager Class
     private EnvManager CloverManager;
-
-
-
-
     public Transform camTrans;
     public GameObject cloverTemplate;
     public Transform cloverParent;

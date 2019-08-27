@@ -6,7 +6,6 @@ using UnityEngine.XR.WSA;
 public class Lotus
 {
     // ------------ Lotus Class -----------------------
-    // ------------ Based on Drop Class ------------------------
     // ------------ Falling Down to Spatial Mesh ------------
 
     public int id;

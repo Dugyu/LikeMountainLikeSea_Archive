@@ -11,7 +11,8 @@ public class FishWander : MonoBehaviour
 
     //Manager
     private BannerManager bannerManager;
-    
+    private EnvManager lotusCloverManager;
+
 
     int heluoTimer;
     int heluoLoop;
@@ -72,6 +73,7 @@ public class FishWander : MonoBehaviour
     private void Awake()
     {
         bannerManager = BannerManager.Instance;
+        lotusCloverManager = EnvManager.Instance;
     }
 
     // Start is called before the first frame update
@@ -163,9 +165,12 @@ public class FishWander : MonoBehaviour
 
         foreach (WanderFish fish in boShoal)
         {
+            Vector3 cloverPos = lotusCloverManager.ReturnLastClover();
+
             fish.Wander();
             fish.Boundary();
             fish.Centric();
+            fish.TowardsClover(cloverPos);
             fish.Move();
         }
         foreach (WanderFish fish in xixiShoal)

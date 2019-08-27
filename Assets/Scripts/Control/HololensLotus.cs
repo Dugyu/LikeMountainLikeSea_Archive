@@ -10,7 +10,7 @@ public class HololensLotus : MonoBehaviour
     public GameObject lotusTemplate;
 
     // Manager Class
-    private EnvManager LotusManager;
+    private EnvManager lotusCloverManager;
     private BannerManager bannerManager;
 
 
@@ -28,7 +28,7 @@ public class HololensLotus : MonoBehaviour
 
     private void Awake()
     {
-        LotusManager = EnvManager.Instance;
+        lotusCloverManager = EnvManager.Instance;
         bannerManager = BannerManager.Instance;
 
     }
@@ -86,7 +86,7 @@ public class HololensLotus : MonoBehaviour
         if(lotusTimer % 64 == 0 && lotusLoop < 10)
         {
             Lotus lotusInAir = new Lotus(lotusTemplate, UnityEngine.Random.insideUnitSphere + wenyaoBannerOrigin);
-            LotusManager.AddLotus(lotusInAir);
+            lotusCloverManager.AddLotus(lotusInAir);
             lotusLoop++;
         }
 
@@ -104,7 +104,7 @@ public class HololensLotus : MonoBehaviour
         if (lotusTimer % 64 == 0 && lotusLoop < 10)
         {
             Lotus lotusInAir = new Lotus(lotusTemplate, UnityEngine.Random.insideUnitSphere + boBannerOrigin);
-            LotusManager.AddLotus(lotusInAir);
+            lotusCloverManager.AddLotus(lotusInAir);
             lotusLoop++;
         }
         if (lotusTimer == 130)
@@ -125,7 +125,7 @@ public class HololensLotus : MonoBehaviour
 
         Lotus lotusInAir = new Lotus(lotusTemplate, PointInAir);
 
-        LotusManager.AddLotus(lotusInAir);
+        lotusCloverManager.AddLotus(lotusInAir);
 
     }
 
