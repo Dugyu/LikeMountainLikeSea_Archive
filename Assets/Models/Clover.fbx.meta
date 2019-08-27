@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d7f5a2f4ce389943b0a2518b030e0dc
+guid: 88bbf79bf8d97c242bd8029bef6fefc2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: clover
+    100000: clover
+    100002: //RootNode
     100004: Petal1
     100006: Petal1_1
     100008: Petal1_2
@@ -38,8 +38,8 @@ ModelImporter:
     100064: Petal4_6
     100066: Petal4_7
     100068: Root
-    400000: //RootNode
-    400002: clover
+    400000: clover
+    400002: //RootNode
     400004: Petal1
     400006: Petal1_1
     400008: Petal1_2
@@ -75,7 +75,7 @@ ModelImporter:
     400068: Root
     2100000: Mat
     4300000: clover
-    7400000: clover
+    7400000: Clover2
     9500000: //RootNode
     13700000: clover
   externalObjects:
@@ -112,10 +112,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: clover
+      name: Clover2
       takeName: CINEMA_4D_Main
       firstFrame: 0
-      lastFrame: 180
+      lastFrame: 300
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

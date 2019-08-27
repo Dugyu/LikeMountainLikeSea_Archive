@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23476d89acf796a419850680a181616d
+guid: ef6542893d24ad14b8f3982cb94962a5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -77,7 +77,7 @@ ModelImporter:
     4300004: Cylinder
     4300006: scroll
     4300008: scroll_2
-    7400000: ScrollBanner
+    7400000: scrollBanner
     9500000: //RootNode
     13700000: painting
   externalObjects:
@@ -85,7 +85,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Banner
-    second: {fileID: 2100000, guid: a7df163a6f8c9914fa7fd4dbb638b1d1, type: 2}
+    second: {fileID: 2100000, guid: b971608353aeafc42915a790d6741f9f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -124,10 +124,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ScrollBanner
+      name: scrollBanner
       takeName: CINEMA_4D_Main
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 239
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
