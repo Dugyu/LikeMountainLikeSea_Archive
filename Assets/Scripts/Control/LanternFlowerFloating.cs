@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LanternFloating : MonoBehaviour
+public class LanternFlowerFloating : MonoBehaviour
 {
     public GameObject lanternTemplate_Red;
     public GameObject lanternTemplate_Blue;

@@ -75,7 +75,7 @@ ModelImporter:
     400068: Root
     2100000: Mat
     4300000: clover
-    7400000: Clover2
+    7400000: clover
     9500000: //RootNode
     13700000: clover
   externalObjects:
@@ -112,7 +112,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Clover2
+      name: clover
       takeName: CINEMA_4D_Main
       firstFrame: 0
       lastFrame: 300

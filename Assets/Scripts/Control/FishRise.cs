@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class LotusDropNew : MonoBehaviour
+public class FishRise : MonoBehaviour
 {
     // Manager  
     private EnvManager lotusCloverManager;

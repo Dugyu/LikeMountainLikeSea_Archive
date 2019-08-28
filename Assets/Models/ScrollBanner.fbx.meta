@@ -85,7 +85,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Banner
-    second: {fileID: 2100000, guid: b971608353aeafc42915a790d6741f9f, type: 2}
+    second: {fileID: 2100000, guid: ba6c6ef7d36d1ad48b7b4614e0e9e284, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

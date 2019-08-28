@@ -77,11 +77,9 @@
 						float3 toCam = normalize(WorldSpaceViewDir(float4(i.world_pos,1.0)));
 						float3 fragNormal = normalize(i.world_normal);
 						float rimLight = 1.0 - max(0.0, dot(fragNormal,toCam));
-						rimLight = pow(rimLight, 2);
-						//col.rgb = saturate(col.rgb + rimLight);
+						rimLight = pow(rimLight, 5);
 						col.a = _rimColor.a;
-						return col;
-						//return col*_rimColor;
+						return col + _rimColor * rimLight*0.5;
 					}
 
 

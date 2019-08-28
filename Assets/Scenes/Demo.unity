@@ -22193,14 +22193,14 @@ GameObject:
   - component: {fileID: 1154452068}
   - component: {fileID: 1154452071}
   - component: {fileID: 1154452076}
-  - component: {fileID: 1154452069}
   - component: {fileID: 1154452070}
   - component: {fileID: 1154452073}
   - component: {fileID: 1154452072}
   - component: {fileID: 1154452074}
-  - component: {fileID: 1154452078}
+  - component: {fileID: 1154452069}
   - component: {fileID: 1154452079}
   - component: {fileID: 1154452080}
+  - component: {fileID: 1154452078}
   - component: {fileID: 1154452075}
   m_Layer: 0
   m_Name: Scripting
@@ -22325,7 +22325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTrans: {fileID: 1737661235}
-  useMouse: 1
+  useMouse: 0
   _fadeSpeed: 0.75
 --- !u!114 &1154452076
 MonoBehaviour:
@@ -28211,31 +28211,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1731666
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.05
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_RootOrder
@@ -28247,7 +28247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 400256, guid: 5000e585927458c4f8057133406e92cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementFlower : MonoBehaviour
+public class CloverMove : MonoBehaviour
 {
     // Manager Class
     private EnvManager CloverManager;
