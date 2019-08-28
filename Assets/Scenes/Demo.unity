@@ -21924,7 +21924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099114932}
   m_Layer: 0
-  m_Name: Flowers
+  m_Name: FlowerTemplates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21945,7 +21945,7 @@ Transform:
   - {fileID: 338304134}
   - {fileID: 1311172344}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1101078490
 PrefabInstance:
@@ -28196,7 +28196,7 @@ Transform:
   - {fileID: 1323642908}
   - {fileID: 1962628218}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1646146076
 PrefabInstance:

@@ -8,9 +8,7 @@ public class GazeChangeColor : MonoBehaviour
     public Transform camTrans;
     public bool useMouse;
 
-    //Color _lerpColor = new Color(0.8f, 0.25f, 0, 0.5f);
     Color _lerpColor = new Color(1,0.6f,0.6f,1);
-    //Color _originalColor = new Color(0.73f, 0.73f, 0.73f, 0.4f);
     Color _originalColor = new Color(1, 1, 1, 1);
     public float _fadeSpeed;
 
@@ -21,11 +19,8 @@ public class GazeChangeColor : MonoBehaviour
     int _colorID;
     SkinnedMeshRenderer _meshRenderer;
 
-
+    // Hand Interaction
     InteractionSourceState[] interactionSourceStates;
-
-
-
 
     // Manager Class
     private BannerManager bannerManager;
@@ -41,7 +36,6 @@ public class GazeChangeColor : MonoBehaviour
     {
         _colorID = Shader.PropertyToID("_color");
         InteractionManager.InteractionSourceLost += InteractionManager_InteractionSourceLost;
-        
 
     }
 
@@ -143,8 +137,6 @@ public class GazeChangeColor : MonoBehaviour
 
         }
 
-
-
         foreach (InteractionSourceState sourceState in interactionSourceStates)
         {
             var headPose = sourceState.headPose;
@@ -152,7 +144,6 @@ public class GazeChangeColor : MonoBehaviour
             Vector3 direction = headPose.forward;
 
             RaycastHit hit;
-
 
             switch (state)
             {

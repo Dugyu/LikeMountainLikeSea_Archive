@@ -43,7 +43,7 @@ public class HololensLotus : MonoBehaviour
         recognizer.StartCapturingGestures();
         recognizer.SetRecognizableGestures(GestureSettings.ManipulationTranslate | GestureSettings.Tap);
         recognizer.Tapped += HandleTap;
-        recognizer.ManipulationUpdated += OnManupulationUpdated;
+        recognizer.ManipulationUpdated += OnManipulationUpdated;
         recognizer.ManipulationStarted += OnManipulationStarted;
         recognizer.ManipulationCompleted += OnManipulationCompleted;
         recognizer.ManipulationCanceled += OnManipulationCanceled;
@@ -130,23 +130,21 @@ public class HololensLotus : MonoBehaviour
     }
 
 
-    private void OnManupulationUpdated(ManipulationUpdatedEventArgs obj)
+    private void OnManipulationUpdated(ManipulationUpdatedEventArgs obj)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
     private void OnManipulationStarted(ManipulationStartedEventArgs obj)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
-
     private void OnManipulationCanceled(ManipulationCanceledEventArgs obj)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
-
     private void OnManipulationCompleted(ManipulationCompletedEventArgs obj)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
 
